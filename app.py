@@ -1,34 +1,18 @@
 import streamlit as st
-from datasets import get_data
-import plotly.graph_objects as go
+from urllib.request import urlopen
+import json
 import plotly.express as px
+from datasets import get_data
+from figure import create_figure
 
-option_dict = {'ΑΕΠ Χώρας σε Δισεκατομμύρια Ευρώ': 'GDP', 'τεστ': 'test'}
+option_dict = {'ΑΕΠ Χώρας σε Δισεκατομμύρια Ευρώ': 'GDP',
+               'ΑΕΠ Περιφερειών σε Δισεκατομμύρια Ευρώ': 'GDP_region'}
 
 def get_selection():
     if 'option' in st.session_state.keys():
         return st.session_state['option']
     else: 
         return 'ΑΕΠ Χώρας σε Δισεκατομμύρια Ευρώ'
-
-def create_plot():
-
-    select_  = option_dict[get_selection()]
-
-    if select_ == 'GDP':
-        fig = px.line(data_frame = data[select_], y='values',
-        title = get_selection())
-        fig.update_layout(xaxis_title = '', yaxis_title = '',
-                          plot_bgcolor = 'white',
-                          margin=dict(l=1, r=1, t=25, b=1, pad=1))
-    else:
-        fig = px.scatter(data[select_], y = 'y', x = 'x',
-                         title = get_selection())
-        fig.update_layout(xaxis_title = '', yaxis_title = '',
-                          margin=dict(l=20, r=20, t=20, b=20))
-
-
-    st.plotly_chart(fig, use_container_width = True)
 
 
 data = get_data()
@@ -47,7 +31,10 @@ st.markdown(desc)
 st.subheader("Οικονομικά Στοιχεία Χώρας")
 
 
-create_plot()
+selection = get_selection()
+figure = create_figure(data, selection, option_dict)
+
+st.plotly_chart(figure, use_container_width = True)
 
 st.selectbox('Επιλέξτε ένα στατιστικό στοιχείο',
              option_dict.keys(), index = 0, key = 'option')  
