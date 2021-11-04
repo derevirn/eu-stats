@@ -12,30 +12,36 @@ def get_geojson():
 
     return regions
     
-def create_line(data, selection, select_):
-    fig = px.line(data_frame = data[select_], y='values',
+def create_line(data, selection, columns):
+    df = data()
+
+    fig = px.line(data_frame = df, x = 'time',  y = columns,
     title = selection)
+
+    hovertemplate = '%{x|%d/%m/%Y} <br>%{y:.2f}'
+    fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
                         plot_bgcolor = 'white',
                         margin=dict(l=1, r=1, t=25, b=1, pad=1))
     return fig
 
-def create_choropleth(data, selection, select_):
-    latest = str(data[select_].index.year[-1])
-    hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f} δις €'
-
-    fig = px.choropleth(data[select_].loc[latest], geojson = get_geojson(),
-                        locations = 'geo', color = 'values',
+def create_choropleth(data, selection, columns):
+    df = data()
+    latest = str(df.index.year[-1])
+    
+    fig = px.choropleth(df.loc[latest], geojson = get_geojson(),
+                        locations = 'geo', color = columns,
                         featureidkey = 'properties.id',
                         color_continuous_scale="Viridis",
                         projection = 'mercator',
                         fitbounds = 'locations',
-                        #animation_frame = 'time',
+                        #animation_frame = 'year',
                         basemap_visible = False,
                         width = 700, height = 500,
                         custom_data = ['region_name', 'values'],
-                        title = 'ΑΕΠ Περιφερειών σε Δισεκατομμύρια Ευρώ')
+                        title = selection)
 
+    hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f} δις €'
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(margin={"r":0,"t":25,"l":0,"b":0})
     fig.update_coloraxes(colorbar_title_text="")
@@ -43,13 +49,16 @@ def create_choropleth(data, selection, select_):
     return fig
 
 
-def create_figure(data, selection, option_dict):
-    select_  = option_dict[selection]
+def create_figure(selection, option_dict):
 
-    if select_ == 'GDP':
-        fig = create_line(data, selection, select_)
+    data = option_dict[selection]['df_func']
+    plot_type = option_dict[selection]['plot_type']
+    columns = option_dict[selection]['columns']
+
+    if plot_type == 'line':
+        fig = create_line(data, selection, columns)
         
-    else:
-        fig = create_choropleth(data, selection, select_)
+    elif plot_type == 'choropleth':
+        fig = create_choropleth(data, selection, columns)
         
     return fig
