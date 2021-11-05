@@ -35,10 +35,10 @@ def get_df_gdp_region():
 @st.cache
 def get_vaccinations():
     rename_dict = {'date': 'time',
-                   'total_vaccinations': 'Σύνολο Εμβολιασμών',
-                   'people_fully_vaccinated': 'Ολοκληρωμένοι Εμβολιασμοί',
-                   'people_vaccinated': 'Εμβολιασμοί με Τουλάχιστον 1 Δόση',
-                   'total_boosters': 'Εμβολιασμοί Αναμνηστικής Δόσης' }
+                   'total_vaccinations': 'Σύνολο',
+                   'people_fully_vaccinated': 'Ολοκληρωμένοι',
+                   'people_vaccinated': 'Τουλάχιστον 1 Δόση',
+                   'total_boosters': 'Αναμνηστική Δόση' }
     
     df_vaccinations = pd.read_csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/Greece.csv")
     df_vaccinations['date'] = pd.to_datetime(df_vaccinations['date'])
