@@ -16,10 +16,9 @@ st.markdown(desc)
 
 plot_spot = st.empty()
 
+st.radio('Επιλέξτε μία Κατηγορία', ['Οικονομία', 'COVID-19'], key = 'radio')
 st.selectbox('Επιλέξτε ένα Στατιστικό Στοιχείο',
             get_option(), key = 'selected')
-
-st.radio('Επιλέξτε μία Κατηγορία', ['Οικονομία', 'COVID-19'], key = 'radio')
 
 figure = create_figure(session['selected'], option_dict)
 

@@ -28,20 +28,19 @@ def create_line(data, selection, columns):
 def create_choropleth(data, selection, columns):
     df = data()
     latest = str(df.index.year[-1])
-    
     fig = px.choropleth(df.loc[latest], geojson = get_geojson(),
                         locations = 'geo', color = columns,
                         featureidkey = 'properties.id',
-                        color_continuous_scale="Viridis",
+                        color_continuous_scale="Viridis_r",
                         projection = 'mercator',
                         fitbounds = 'locations',
                         #animation_frame = 'year',
                         basemap_visible = False,
-                        width = 700, height = 500,
+                        height = 600,
                         custom_data = ['region_name', 'values'],
                         title = selection)
 
-    hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f} δις €'
+    hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(margin={"r":0,"t":25,"l":0,"b":0})
     fig.update_coloraxes(colorbar_title_text="")

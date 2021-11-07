@@ -1,5 +1,3 @@
-from urllib.request import urlopen
-import json
 import pandas as pd
 import streamlit as st
 from eurostatapiclient import EurostatAPIClient
@@ -10,27 +8,49 @@ client = EurostatAPIClient('v2.1', 'json', 'en')
 
 #Get national GDP data
 @st.cache
-def get_df_gdp():
+def get_gdp():
     params = {'geo': 'EL', 'unit': 'CP_MEUR', 'na_item': 'B1GQ'}
-    df_gdp = client.get_dataset('nama_10_gdp', params).to_dataframe()
-    df_gdp.dropna(inplace = True)
-    df_gdp['values'] = df_gdp['values'] / 1000
-    df_gdp['time'] = pd.to_datetime(df_gdp['time'])
+    df = client.get_dataset('nama_10_gdp', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['values'] = df['values'] / 1000
+    df['time'] = pd.to_datetime(df['time'])
     
-    return df_gdp
+    return df
 
 #Get regional GDP data
 @st.cache
-def get_df_gdp_region():
+def get_gdp_region():
     params = {'unit': 'MIO_EUR', 'geo': codes_el.keys()}
-    df_gdp_region = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
-    df_gdp_region.dropna(inplace = True)
-    df_gdp_region['region_name'] = df_gdp_region['geo'].apply(lambda x: codes_el[x])
-    df_gdp_region['values'] = df_gdp_region['values'] / 1000
-    df_gdp_region['time'] = pd.to_datetime(df_gdp_region['time'])
-    df_gdp_region.set_index('time', inplace=True)  
+    df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes_el[x])
+    df['values'] = df['values'] / 1000
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index('time', inplace=True)  
 
-    return df_gdp_region
+    return df
+
+@st.cache
+def get_unemployment():
+    params = {'geo': 'EL', 's_adj': 'SA', 'indic': 'LM-UN-T-TOT'}
+    df = client.get_dataset('ei_lmhr_m', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'], format = '%YM%m')
+
+    return df
+
+@st.cache
+def get_unemployment_region():
+    params = {'sex': 'T', 'geo': codes_el.keys(), 'age': 'Y15-74',
+          'isced11': 'TOTAL'} 
+    df = client.get_dataset('lfst_r_lfu3rt', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes_el[x])
+    df['time'] = pd.to_datetime(df['time'])
+    df['year'] = df['time'].dt.year
+    df.set_index('time', inplace = True)
+
+    return df
 
 @st.cache
 def get_vaccinations():
