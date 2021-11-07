@@ -97,8 +97,6 @@ def get_total_deaths():
     
     return df
 
-
-
 @st.cache
 def get_vaccinations():
     rename_dict = {'date': 'time',

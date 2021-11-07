@@ -2,14 +2,14 @@ from datasets import *
 
 option_dict = {
     
-    'ΑΕΠ Χώρας - Δισεκατομμύρια Ευρώ': {
+    'ΑΕΠ Χώρας - Τρέχουσες Τιμές σε Δισεκατομμύρια Ευρώ': {
         'df_func': get_gdp,
         'category': 'Οικονομία',
         'plot_type': 'line', 
         'columns': 'values',
     },
 
-    'ΑΕΠ Περιφερειών - Δισεκατομμύρια Ευρώ': {
+    'ΑΕΠ Περιφερειών - Τρέχουσες Τιμές σε Δισεκατομμύρια Ευρώ': {
         'df_func': get_gdp_region,
         'category': 'Οικονομία',
         'plot_type': 'choropleth',
