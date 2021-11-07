@@ -31,6 +31,38 @@ option_dict = {
         'columns': 'values'
     },
 
+    'Ημερήσια Κρούσματα COVID-19': {
+        'df_func': get_new_cases,
+        'category': 'COVID-19',
+        'plot_type': 'bar',
+        'columns': 'values'
+
+    },
+
+    'Ημερήσιοι Θάνατοι COVID-19': {
+        'df_func': get_new_deaths,
+        'category': 'COVID-19',
+        'plot_type': 'bar',
+        'columns': 'values'
+
+    },
+
+    'Συνολικά Κρούσματα COVID-19': {
+        'df_func': get_total_cases,
+        'category': 'COVID-19',
+        'plot_type': 'line',
+        'columns': 'values'
+
+    },
+
+    'Συνολικοί Θάνατοι COVID-19': {
+        'df_func': get_total_deaths,
+        'category': 'COVID-19',
+        'plot_type': 'line',
+        'columns': 'values'
+
+    },
+
     'Εμβολιασμοί COVID-19': {
         'df_func': get_vaccinations,
         'category': 'COVID-19',

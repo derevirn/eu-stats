@@ -5,8 +5,8 @@ from nuts2 import codes_el
 
 client = EurostatAPIClient('v2.1', 'json', 'en')
 
+#Economy
 
-#Get national GDP data
 @st.cache
 def get_gdp():
     params = {'geo': 'EL', 'unit': 'CP_MEUR', 'na_item': 'B1GQ'}
@@ -17,7 +17,6 @@ def get_gdp():
     
     return df
 
-#Get regional GDP data
 @st.cache
 def get_gdp_region():
     params = {'unit': 'MIO_EUR', 'geo': codes_el.keys()}
@@ -51,6 +50,54 @@ def get_unemployment_region():
     df.set_index('time', inplace = True)
 
     return df
+
+#COVID-19
+
+@st.cache
+def get_new_cases():
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/new_cases.csv')
+    df['date'] = pd.to_datetime(df['date'])
+    cols = ['date', 'Greece']
+    df = df[cols]
+    df.rename(columns = {'date': 'time', 'Greece': 'values'}, inplace = True)
+    df.dropna(inplace = True)
+
+    return df
+
+@st.cache
+def get_new_deaths():
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/new_deaths.csv')
+    df['date'] = pd.to_datetime(df['date'])
+    cols = ['date', 'Greece']
+    df = df[cols]
+    df.rename(columns = {'date': 'time', 'Greece': 'values'}, inplace = True)
+    df.dropna(inplace = True)
+    
+    return df
+
+@st.cache
+def get_total_cases():
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/total_cases.csv')
+    df['date'] = pd.to_datetime(df['date'])
+    cols = ['date', 'Greece']
+    df = df[cols]
+    df.rename(columns = {'date': 'time', 'Greece': 'values'}, inplace = True)
+    df.dropna(inplace = True)
+    
+    return df
+
+@st.cache
+def get_total_deaths():
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/total_deaths.csv')
+    df['date'] = pd.to_datetime(df['date'])
+    cols = ['date', 'Greece']
+    df = df[cols]
+    df.rename(columns = {'date': 'time', 'Greece': 'values'}, inplace = True)
+    df.dropna(inplace = True)
+    
+    return df
+
+
 
 @st.cache
 def get_vaccinations():

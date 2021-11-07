@@ -7,11 +7,13 @@ from util_funcs import *
 desc = """ Η σελίδα αυτή περιλαμβάνει ένα σύνολο στατιστικών στοιχείων
 σχετικά με την Ελλάδα. Η σελίδα δημιουργήθηκε από τον [Γιάννη Τόλιο](https://giannis.io),  
 
-Πηγές δεδομένων: Eurostat
+Πηγές δεδομένων: [Eurostat](https://ec.europa.eu/eurostat/web/main/home), 
+[Our World In Data](https://ourworldindata.org/)
 
+-----
 """
 
-st.title('Στατιστικά Στοιχεία της Ελλάδας')
+st.title('Στατιστικά Στοιχεία Ελλάδας')
 st.markdown(desc)
 
 plot_spot = st.empty()

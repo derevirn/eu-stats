@@ -25,6 +25,21 @@ def create_line(data, selection, columns):
                         margin=dict(l=1, r=1, t=25, b=1, pad=1))
     return fig
 
+def create_bar(data, selection, columns):
+    df = data()
+
+    fig = px.bar(data_frame = df[-120:], x = 'time',  y = columns,
+    title = selection)
+
+    hovertemplate = '%{x|%d/%m/%Y} <br>%{y:.2f}'
+    fig.update_traces(hovertemplate=hovertemplate)
+    fig.update_layout(xaxis_title = '', yaxis_title = '',
+                        plot_bgcolor = 'white',
+                        margin=dict(l=1, r=1, t=25, b=1, pad=1))
+    return fig
+
+
+
 def create_choropleth(data, selection, columns):
     df = data()
     latest = str(df.index.year[-1])
@@ -56,8 +71,11 @@ def create_figure(selection, option_dict):
 
     if plot_type == 'line':
         fig = create_line(data, selection, columns)
+
+    elif plot_type == 'bar':
+        fig = create_bar(data, selection, columns)
         
     elif plot_type == 'choropleth':
         fig = create_choropleth(data, selection, columns)
-        
+
     return fig
