@@ -21,7 +21,7 @@ desc = """ Η σελίδα αυτή περιλαμβάνει ένα σύνολο
 st.title('Στατιστικά Στοιχεία Ελλάδας')
 st.markdown(desc)
 
-plot_spot = st.empty()
+plot_container = st.container()
 
 st.radio('Επιλέξτε μία Κατηγορία', ['Οικονομία', 'COVID-19'], key = 'radio')
 st.selectbox('Επιλέξτε ένα Στατιστικό Στοιχείο',
@@ -29,5 +29,6 @@ st.selectbox('Επιλέξτε ένα Στατιστικό Στοιχείο',
 
 figure = create_figure(session['selected'], option_dict)
 
-with plot_spot:
+with plot_container:
+    st.write(session['selected'])
     st.plotly_chart(figure, use_container_width = True)
