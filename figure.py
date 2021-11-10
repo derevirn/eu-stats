@@ -15,7 +15,9 @@ def get_geojson():
 def create_line(data, columns):
     df = data()
 
-    fig = px.line(data_frame = df, x = 'time',  y = columns)
+    fig = px.line(data_frame = df, x = 'time',  y = columns,
+                  line_shape = 'linear',
+                  color_discrete_sequence=px.colors.qualitative.D3)
 
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
@@ -29,7 +31,8 @@ def create_line(data, columns):
 def create_bar(data, columns):
     df = data()
 
-    fig = px.bar(data_frame = df[-120:], x = 'time',  y = columns)
+    fig = px.bar(data_frame = df[-90:], x = 'time',  y = columns,
+                 color_discrete_sequence=px.colors.qualitative.D3)   
 
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
