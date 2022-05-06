@@ -2,6 +2,7 @@ import streamlit as st
 from urllib.request import urlopen
 import json
 import plotly.express as px
+from nuts2 import codes_el
 
 
 @st.cache
@@ -47,6 +48,9 @@ def create_bar(data, columns):
 
 def create_choropleth(data, columns):
     df = data()
+    mask = df['geo'].isin(codes_el.keys())
+    df = df[mask]
+    
     latest = str(df.index.year[-1])
     fig = px.choropleth(df.loc[latest], geojson = get_geojson(),
                         locations = 'geo', color = columns,
@@ -56,7 +60,7 @@ def create_choropleth(data, columns):
                         fitbounds = 'locations',
                         basemap_visible = False,
                         height = 600,
-                        custom_data = ['region_name', 'values'])
+                        custom_data = ['geo', 'values'])
 
     hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f}'
     fig.update_traces(hovertemplate=hovertemplate)

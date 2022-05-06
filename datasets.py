@@ -19,10 +19,10 @@ def get_gdp():
 
 @st.cache
 def get_gdp_region():
-    params = {'unit': 'MIO_EUR', 'geo': codes_el.keys()}
+    params = {'unit': 'MIO_EUR'}
     df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
     df.dropna(inplace = True)
-    df['region_name'] = df['geo'].apply(lambda x: codes_el[x])
+    #df['region_name'] = df['geo'].apply(lambda x: codes_el[x])
     df['values'] = df['values'] / 1000
     df['time'] = pd.to_datetime(df['time'])
     df.set_index('time', inplace=True)  
