@@ -2,7 +2,7 @@ import streamlit as st
 from urllib.request import urlopen
 import json
 import plotly.express as px
-from nuts2 import codes_el
+from nuts2 import *
 
 
 @st.cache
@@ -13,8 +13,8 @@ def get_geojson():
 
     return regions
     
-def create_line(data, columns):
-    df = data()
+def create_line(data, columns, country):
+    df = data(country)
 
     fig = px.line(data_frame = df, x = 'time',  y = columns,
                   line_shape = 'linear',
@@ -29,8 +29,8 @@ def create_line(data, columns):
 
     return fig
 
-def create_bar(data, columns):
-    df = data()
+def create_bar(data, columns, country):
+    df = data(country)
 
     fig = px.bar(data_frame = df[-90:], x = 'time',  y = columns,
                  color_discrete_sequence=px.colors.qualitative.D3)   
@@ -46,10 +46,10 @@ def create_bar(data, columns):
 
 
 
-def create_choropleth(data, columns):
-    df = data()
-    mask = df['geo'].isin(codes_el.keys())
-    df = df[mask]
+def create_choropleth(data, columns, country):
+    df = data(country)
+    #mask = df['geo'].isin(codes_el.keys())
+    #df = df[mask]
     
     latest = str(df.index.year[-1])
     fig = px.choropleth(df.loc[latest], geojson = get_geojson(),
@@ -60,7 +60,7 @@ def create_choropleth(data, columns):
                         fitbounds = 'locations',
                         basemap_visible = False,
                         height = 600,
-                        custom_data = ['geo', 'values'])
+                        custom_data = ['region_name', 'values'])
 
     hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
@@ -70,19 +70,19 @@ def create_choropleth(data, columns):
     return fig
 
 
-def create_figure(selection, option_dict):
+def create_figure(selection, option_dict, country):
 
     data = option_dict[selection]['df_func']
     plot_type = option_dict[selection]['plot_type']
     columns = option_dict[selection]['columns']
 
     if plot_type == 'line':
-        fig = create_line(data, columns)
+        fig = create_line(data, columns, country)
 
     elif plot_type == 'bar':
-        fig = create_bar(data, columns)
+        fig = create_bar(data, columns, country)
         
     elif plot_type == 'choropleth':
-        fig = create_choropleth(data, columns)
+        fig = create_choropleth(data, columns, country)
 
     return fig
