@@ -45,7 +45,7 @@ with st.expander("Display Tabular Dataset"):
 figure = create_figure(session['indicator'], option_dict, session['country'])
 
 with plot_container:
-    st.write("** {} **".format(session['indicator']))
+    st.write("**{} - {}**".format(session['country'], session['indicator']))
     st.plotly_chart(figure, use_container_width = True)
     source = '<div style="text-align: right;"> Source: {}</div>'.format(option_dict[selection]['source'])
     st.markdown(source, unsafe_allow_html = True) 

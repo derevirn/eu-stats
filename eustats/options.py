@@ -2,7 +2,7 @@ from .datasets import *
 
 option_dict = {
     
-    'National GDP - Current Prices in Billions of Euro (€)': {
+    'National GDP (Current Prices in Billions of Euro)': {
         'df_func': get_gdp,
         'category': 'Economy',
         'plot_type': 'line', 
@@ -10,7 +10,7 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'Regional GDP - Current Prices in Billions of Euro (€)': {
+    'Regional GDP (Current Prices in Billions of Euro)': {
         'df_func': get_gdp_region,
         'category': 'Economy',
         'plot_type': 'choropleth',
@@ -18,7 +18,7 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'National Unemployment - Percentage % ': {
+    'National Unemployment (Percentage %)': {
         'df_func': get_unemployment,
         'category': 'Economy',
         'plot_type': 'line',
@@ -27,7 +27,7 @@ option_dict = {
 
     },
 
-    'Regional Unemployment - Percentage % ': {
+    'Regional Unemployment (Percentage %)': {
         'df_func': get_unemployment_region,
         'category': 'Economy',
         'plot_type': 'choropleth',
