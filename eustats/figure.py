@@ -2,7 +2,7 @@ import streamlit as st
 from urllib.request import urlopen
 import json
 import plotly.express as px
-from nuts2 import *
+from .nuts2 import *
 
 
 @st.cache
@@ -18,10 +18,13 @@ def create_line(data, columns, country):
 
     fig = px.line(data_frame = df, x = 'time',  y = columns,
                   line_shape = 'linear',
+                  render_mode = 'svg',
+                  #title = 'Blah',
                   color_discrete_sequence=px.colors.qualitative.D3)
 
-    hovertemplate = '%{x|%d/%m/%Y} <br>%{y:.2f}'
+    hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
+    fig.update_traces(line_width = 3)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
                         plot_bgcolor = 'white',
                         margin=dict(l=20, r=1, t=1, b=1, pad=1))
@@ -32,10 +35,10 @@ def create_line(data, columns, country):
 def create_bar(data, columns, country):
     df = data(country)
 
-    fig = px.bar(data_frame = df[-90:], x = 'time',  y = columns,
+    fig = px.bar(data_frame = df[-60:], x = 'time',  y = columns,
                  color_discrete_sequence=px.colors.qualitative.D3)   
 
-    hovertemplate = '%{x|%d/%m/%Y} <br>%{y:.2f}'
+    hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
                         plot_bgcolor = 'white',
@@ -48,9 +51,7 @@ def create_bar(data, columns, country):
 
 def create_choropleth(data, columns, country):
     df = data(country)
-    #mask = df['geo'].isin(codes_el.keys())
-    #df = df[mask]
-    
+
     latest = str(df.index.year[-1])
     fig = px.choropleth(df.loc[latest], geojson = get_geojson(),
                         locations = 'geo', color = columns,
@@ -62,9 +63,9 @@ def create_choropleth(data, columns, country):
                         height = 600,
                         custom_data = ['region_name', 'values'])
 
-    hovertemplate = '%{customdata[0]}<br>%{customdata[1]:.2f}'
+    hovertemplate = '%{customdata[0]}<br>%{customdata[1]:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
-    fig.update_layout(margin={"r":1,"t":1,"l":1,"b":1})
+    fig.update_layout(margin={"r":1,"t":15,"l":1,"b":1})
     fig.update_coloraxes(colorbar_title_text="")
 
     return fig

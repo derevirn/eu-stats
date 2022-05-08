@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 from eurostatapiclient import EurostatAPIClient
-from nuts2 import *
+from .nuts2 import *
 
 client = EurostatAPIClient('v2.1', 'json', 'en')
 
@@ -27,7 +27,8 @@ def get_gdp_region(country):
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['values'] = df['values'] / 1000
     df['time'] = pd.to_datetime(df['time'])
-    df.set_index('time', inplace=True)  
+    df['year'] = df['time'].dt.year
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -51,7 +52,7 @@ def get_unemployment_region(country):
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['time'] = pd.to_datetime(df['time'])
     df['year'] = df['time'].dt.year
-    df.set_index('time', inplace = True)
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -104,10 +105,10 @@ def get_total_deaths(country):
 @st.cache
 def get_vaccinations(country):
     rename_dict = {'date': 'time',
-                   'total_vaccinations': 'Σύνολο',
-                   'people_fully_vaccinated': 'Ολοκληρωμένοι',
-                   'people_vaccinated': 'Τουλάχιστον 1 Δόση',
-                   'total_boosters': 'Αναμνηστική Δόση' }
+                   'total_vaccinations': 'Total Vaccinations',
+                   'people_fully_vaccinated': 'Fully Vaccinated',
+                   'people_vaccinated': 'At Least One Dose',
+                   'total_boosters': 'Booster Dose' }
     
     df_vaccinations = pd.read_csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/{}.csv".format(country))
     df_vaccinations['date'] = pd.to_datetime(df_vaccinations['date'])

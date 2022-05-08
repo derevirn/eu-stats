@@ -1,5 +1,5 @@
 from streamlit import session_state as session
-from options import option_dict
+from .options import option_dict
 
 def get_keys(dict_, category):
     arr = []
@@ -9,8 +9,8 @@ def get_keys(dict_, category):
     return arr
 
 def get_option():
-    if 'radio' in session.keys():
-        radio = session['radio']
-        return get_keys(option_dict, radio)
+    if 'category' in session.keys():
+        cat = session['category']
+        return get_keys(option_dict, cat)
     else:
-        return get_keys(option_dict, 'Οικονομία')
+        return get_keys(option_dict, 'Economy')
