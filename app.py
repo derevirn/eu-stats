@@ -2,14 +2,13 @@ import streamlit as st
 from streamlit import session_state as session
 from eustats import *
 
-st.set_page_config(page_title="European Union Statistics", page_icon="📈")
+st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 
 desc = """ 
-
 This dashboard provides statistical indicators and visualizations about European Union countries, 
-based on data from reliable sources. You can simply select the country and indicator 
-of your preference to view the associated graph. Furthermore, you can also display
-the data in standard tabular form, as well as download the CSV file. The dashboard was developed by 
+based on data from reliable sources. You can easily view the graph of your preference, 
+by selecting a country and indicator below. Furthermore, it is also possible to display
+the data in standard tabular format, as well as download the CSV file. The dashboard was developed by 
 [Giannis Tolios](https://giannis.io), using Python and various open source libraries, with the code
 being freely available at [Github](https://github.com/derevirn/stats-greece).
 I would love to hear your feedback and suggestions, so feel free to
@@ -18,7 +17,7 @@ I would love to hear your feedback and suggestions, so feel free to
 -----
 """
 
-st.title('European Union Statistics 📈')
+st.title('StatsEuropa 📈')
 st.markdown(desc)
 
 plot_container = st.container()
