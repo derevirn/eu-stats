@@ -27,7 +27,7 @@ def create_line(data, columns, country):
     fig.update_traces(line_width = 3)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
                         plot_bgcolor = 'white',
-                        margin=dict(l=22, r=1, t=1, b=1, pad=1))
+                        margin=dict(l=22, r=1, t=10, b=1, pad=1))
     fig.update_yaxes(automargin = False)
 
     return fig
@@ -42,7 +42,7 @@ def create_bar(data, columns, country):
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
                         plot_bgcolor = 'white',
-                        margin=dict(l=26, r=1, t=1, b=1, pad=1))
+                        margin=dict(l=26, r=1, t=10, b=1, pad=1))
     fig.update_yaxes(automargin = False)
 
     return fig
