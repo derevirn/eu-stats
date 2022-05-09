@@ -22,6 +22,7 @@ st.markdown(desc)
 
 plot_container = st.container()
 
+
 st.selectbox("Select a Country",  countries.keys(), key = 'country')
 
 col1, col2 = st.columns(2)
@@ -50,3 +51,18 @@ with plot_container:
     source = '<div style="text-align: right; margin-top: -35px"> Source: {}</div>'
     source = source.format(option_dict[selection]['source'])
     st.markdown(source, unsafe_allow_html = True) 
+
+
+tracking = '''<script type="text/javascript">
+var sc_project=12751725; 
+var sc_invisible=1; 
+var sc_security="35d8e5a4"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12751725/0/35d8e5a4/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> '''
+
+st.markdown(tracking, unsafe_allow_html = True)
