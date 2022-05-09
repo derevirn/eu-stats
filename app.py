@@ -57,7 +57,7 @@ tracking = '''<!-- Default Statcounter code for StatsEuropa
 https://eu-stats.herokuapp.com/ -->
 <script type="text/javascript">
 var sc_project=12751725; 
-var sc_invisible=1; 
+var sc_invisible=0; 
 var sc_security="35d8e5a4"; 
 </script>
 <script type="text/javascript"
