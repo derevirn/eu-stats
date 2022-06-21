@@ -12,7 +12,7 @@ the data in standard tabular format, as well as download the CSV file. The dashb
 [Giannis Tolios](https://giannis.io), using Python and various open source libraries, with the code
 being freely available at [Github](https://github.com/derevirn/stats-greece).
 I would love to hear your feedback and suggestions, so feel free to
-[send me an email](&#109;&#97;&#105;&#108;&#116;&#111;&#58;%64%65%72%65%76%69%72%6e%40%67%6d%61%69%6c%2e%63%6f%6d).  
+[send me an email](mailto:info@giannis.io).  
 
 -----
 """
