@@ -33,6 +33,52 @@ def get_gdp_region(country):
     return df
 
 @st.cache
+def get_gdp_capita(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'CLV10_EUR_HAB', 'na_item': 'B1GQ'}
+    df = client.get_dataset('nama_10_pc', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+    
+    return df
+
+@st.cache
+def get_gdp_capita_region(country):
+    country = countries[country]
+    params = {'unit': 'EUR_HAB', 'geo': codes[country]}
+    df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+    df['year'] = df['time'].dt.year
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+
+    return df
+
+@st.cache
+def get_govt_debt(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'PC_GDP',
+              'sector': 'S13', 'na_item': 'GD'}
+    df = client.get_dataset('gov_10dd_edpt1', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+    
+    return df
+
+@st.cache
+def get_govt_budget(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'PC_GDP',
+              'sector': 'S13', 'na_item': 'B9'}
+    df = client.get_dataset('gov_10dd_edpt1', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+    
+    return df
+
+
+@st.cache
 def get_unemployment(country):
     country = countries[country]
     params = {'geo': country, 's_adj': 'SA', 'indic': 'LM-UN-T-TOT'}
@@ -53,6 +99,19 @@ def get_unemployment_region(country):
     df['time'] = pd.to_datetime(df['time'])
     df['year'] = df['time'].dt.year
     df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+
+    return df
+
+@st.cache
+def get_inflation(country):
+
+    country = countries[country]
+    params = {'geo': country, 'coicop': 'CP00'}
+    df = client.get_dataset('prc_hicp_aind', params).to_dataframe()
+    df.dropna(inplace = True)
+    mask = df['unit'] == 'RCH_A_AVG'
+    df = df[mask]
+    df['time'] = pd.to_datetime(df['time'])
 
     return df
 

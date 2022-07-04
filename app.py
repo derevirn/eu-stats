@@ -35,7 +35,7 @@ df_func = option_dict[selection]['df_func']
 df = df_func(session['country'])
 
 with st.expander("Display Tabular Dataset"):
-    st.dataframe(df)
+    st.dataframe(df.style.format(precision = 2, thousands = ','))
 
     st.download_button("Download Dataset (CSV)",
     df.to_csv(index = False, float_format = "%.2f").encode('utf-8'),
