@@ -17,7 +17,7 @@ I would love to hear your feedback and suggestions, so feel free to
 -----
 """
 
-st.title('StatsEuropa 📈')
+st.title('statsEuropa 📈')
 st.markdown(desc)
 
 plot_container = st.container()
@@ -27,13 +27,15 @@ st.selectbox("Select a Country",  countries.keys(), key = 'country')
 
 col1, col2 = st.columns(2)
 
-col1.selectbox('Select a Category', ['Economy', 'COVID-19'], key = 'category')
+col1.selectbox('Select a Category', ['Economy', 'Society', 'COVID-19'], key = 'category')
 col2.selectbox('Select a Statistical Indicator', get_option(), key = 'indicator')
 
 selection = session['indicator']
 df_func = option_dict[selection]['df_func']
 df = df_func(session['country'])
-
+if df.shape[0] == 0:
+    st.warning("No data available, please select another country or indicator", )
+ 
 with st.expander("Display Tabular Dataset"):
     st.dataframe(df.style.format(precision = 2, thousands = ','))
 
@@ -42,7 +44,7 @@ with st.expander("Display Tabular Dataset"):
     "dataset.csv", "text/csv", key='download-csv') 
 
 
-figure = create_figure(session['indicator'], option_dict, session['country'])
+figure = create_figure(df, option_dict[session['indicator']])
 
 with plot_container:
     st.write("##### {} - {}".format(session['country'], session['indicator']))

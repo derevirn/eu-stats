@@ -35,7 +35,7 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'National Unemployment (Percentage %)': {
+    'National Unemployment (Percentage of the Population %)': {
         'df_func': get_unemployment,
         'category': 'Economy',
         'plot_type': 'line',
@@ -44,7 +44,7 @@ option_dict = {
 
     },
 
-    'Regional Unemployment (Percentage %)': {
+    'Regional Unemployment (Percentage of the Population %)': {
         'df_func': get_unemployment_region,
         'category': 'Economy',
         'plot_type': 'choropleth',
@@ -52,7 +52,16 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'Inflation Rate (% change compared to previous year)': {
+     'Minimum Wage (Euros per Month) ': {
+        'df_func': get_min_wage,
+        'category': 'Economy',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Inflation Rate (% Change Compared to Previous Year)': {
         'df_func': get_inflation,
         'category': 'Economy',
         'plot_type': 'bar',
@@ -61,7 +70,7 @@ option_dict = {
 
     },
 
-    'Government Gross Debt (as % of GDP)': {
+    'Government Gross Debt (Percentage of the GDP %)': {
         'df_func': get_govt_debt,
         'category': 'Economy',
         'plot_type': 'line',
@@ -70,10 +79,57 @@ option_dict = {
 
     },
 
-    'Government Budget Balance (as % of GDP)': {
+    'Government Budget Balance (Percentage of the GDP %)': {
         'df_func': get_govt_budget,
         'category': 'Economy',
         'plot_type': 'bar',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    # Society
+
+     'National Population (Absolute Number)': {
+        'df_func': get_population,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': ['Total Population', 'Male Population','Female Population'],
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+     'Regional Population (Absolute Number)': {
+        'df_func': get_population_region,
+        'category': 'Society',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Gender Pay Gap (Percentage of hourly earnings of men %)': {
+        'df_func': get_gender_pay_gap,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'National - People at Risk of Poverty (Percentage of the Population %)': {
+        'df_func': get_poverty_risk,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional - People at Risk of Poverty (Percentage of the Population %)': {
+        'df_func': get_poverty_risk,
+        'category': 'Society',
+        'plot_type': 'line',
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
