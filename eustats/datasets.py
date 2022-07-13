@@ -138,7 +138,7 @@ def get_inflation(country):
 @st.cache(ttl = SEC_IN_DAY)
 def get_population(country):
     country = countries[country]
-    params = {'geo': country}
+    params = {'geo': country, 'indic_de': ['JAN', 'MJAN', 'FJAN']}
     df = client.get_dataset('demo_gind', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
@@ -179,7 +179,7 @@ def get_poverty_risk(country):
 def get_poverty_risk_region(country):
     country = countries[country]
     params = {'geo': codes[country]}
-    df = client.get_dataset('ilc_peps_11', params).to_dataframe()
+    df = client.get_dataset('ilc_peps11', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['time'] = pd.to_datetime(df['time'])

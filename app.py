@@ -5,7 +5,7 @@ from eustats import *
 st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 
 desc = """ 
-This dashboard provides statistical indicators and visualizations about European Union countries, 
+This dashboard provides statistical indicators and visualizations for European Union countries, 
 based on data from reliable sources. You can easily view the graph of your preference, 
 by selecting a country and indicator below. Furthermore, it is also possible to display
 the data in standard tabular format, as well as download the CSV file. The dashboard was developed by 
@@ -17,7 +17,7 @@ I would love to hear your feedback and suggestions, so feel free to
 -----
 """
 
-st.title('statsEuropa 📈')
+st.title('StatsEuropa 📈')
 st.markdown(desc)
 
 plot_container = st.container()
@@ -40,7 +40,7 @@ with st.expander("Display Tabular Dataset"):
     st.dataframe(df.style.format(precision = 2, thousands = ','))
 
     st.download_button("Download Dataset (CSV)",
-    df.to_csv(index = False, float_format = "%.2f").encode('utf-8'),
+    df.to_csv(index = True, float_format = "%.2f").encode('utf-8'),
     "dataset.csv", "text/csv", key='download-csv') 
 
 

@@ -61,7 +61,7 @@ option_dict = {
 
     },
 
-    'Inflation Rate (% Change Compared to Previous Year)': {
+    'Inflation Rate (Percentage Change Compared to Previous Year %)': {
         'df_func': get_inflation,
         'category': 'Economy',
         'plot_type': 'bar',
@@ -117,7 +117,7 @@ option_dict = {
 
     },
 
-    'National - People at Risk of Poverty (Percentage of the Population %)': {
+    'National Percentage of People at Risk of Poverty (Population %)': {
         'df_func': get_poverty_risk,
         'category': 'Society',
         'plot_type': 'line',
@@ -126,10 +126,10 @@ option_dict = {
 
     },
 
-    'Regional - People at Risk of Poverty (Percentage of the Population %)': {
-        'df_func': get_poverty_risk,
+    'Regional Percentage of People at Risk of Poverty (Population %)': {
+        'df_func': get_poverty_risk_region,
         'category': 'Society',
-        'plot_type': 'line',
+        'plot_type': 'choropleth',
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
