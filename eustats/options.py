@@ -1,7 +1,7 @@
 from .datasets import *
 
 option_dict = {
-# Economy
+#Economy
 
     'National GDP (Current Prices in Billions of Euro)': {
         'df_func': get_gdp,
@@ -88,7 +88,7 @@ option_dict = {
 
     },
 
-    # Society
+    #Society
 
      'National Population (Absolute Number)': {
         'df_func': get_population,
@@ -135,8 +135,37 @@ option_dict = {
 
     },
 
+    #Environment
 
-    # COVID-19
+    'Greenhouse Gas Emissions (CO2 Equivalent in Tonnes per Capita)': {
+        'df_func': get_ghg_emissions,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Renewable Energy (Percentage of Gross Energy Consumption %)': {
+        'df_func': get_renewable_pct,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Energy Consumption (Kilograms of Oil Equivalent per Capita)': {
+        'df_func': get_energy_cons,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': ['Industry Sector', 'Transport Sector', 'Households'],
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+
+    #COVID-19
 
     'Daily Confirmed Cases of COVID-19': {
         'df_func': get_new_cases,

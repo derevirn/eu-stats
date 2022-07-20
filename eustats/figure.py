@@ -18,7 +18,6 @@ def create_line(df, columns):
     fig = px.line(data_frame = df, x = 'time',  y = columns,
                   line_shape = 'linear',
                   render_mode = 'svg',
-                  #title = 'Blah',
                   color_discrete_sequence=px.colors.qualitative.D3)
 
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'

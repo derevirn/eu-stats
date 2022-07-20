@@ -11,8 +11,7 @@ by selecting a country and indicator below. Furthermore, it is also possible to 
 the data in standard tabular format, as well as download the CSV file. The dashboard was developed by 
 [Giannis Tolios](https://giannis.io), using Python and various open source libraries, with the code
 being freely available at [Github](https://github.com/derevirn/stats-greece).
-I would love to hear your feedback and suggestions, so feel free to
-[send me an email](mailto:info@giannis.io).  
+If you have any feedback and suggestions, feel free to [send an email](mailto:info@giannis.io).  
 
 -----
 """
@@ -22,16 +21,14 @@ st.markdown(desc)
 
 plot_container = st.container()
 
-
-st.selectbox("Select a Country",  countries.keys(), key = 'country')
-
 col1, col2 = st.columns(2)
+col1.selectbox("Select a Country", countries.keys(), index = 9, key = 'country')
+col2.selectbox('Select a Category', ['Economy', 'Society', 'Environment', 'COVID-19'],
+                key = 'category')
+indicator = st.selectbox('Select a Statistical Indicator', get_option())
 
-col1.selectbox('Select a Category', ['Economy', 'Society', 'COVID-19'], key = 'category')
-col2.selectbox('Select a Statistical Indicator', get_option(), key = 'indicator')
-
-selection = session['indicator']
-df_func = option_dict[selection]['df_func']
+#selection = session['indicator']
+df_func = option_dict[indicator]['df_func']
 df = df_func(session['country'])
 if df.shape[0] == 0:
     st.warning("No data available, please select another country or indicator", )
@@ -43,34 +40,35 @@ with st.expander("Display Tabular Dataset"):
     df.to_csv(index = True, float_format = "%.2f").encode('utf-8'),
     "dataset.csv", "text/csv", key='download-csv') 
 
-
-figure = create_figure(df, option_dict[session['indicator']])
+figure = create_figure(df, option_dict[indicator])
 
 with plot_container:
-    st.write("##### {} - {}".format(session['country'], session['indicator']))
+    st.write("##### {} - {}".format(session['country'], indicator))
     st.plotly_chart(figure, use_container_width = True)
 
     source = '<div style="text-align: right; margin-top: -35px"> Source: {}</div>'
-    source = source.format(option_dict[selection]['source'])
+    source = source.format(option_dict[indicator]['source'])
     st.markdown(source, unsafe_allow_html = True) 
 
+terms = '''
+##### Privacy & Terms
 
-tracking = '''<!-- Default Statcounter code for StatsEuropa https://eu-stats.herokuapp.com/ -->
+**Privacy**
 
-<script type="text/javascript">
-var sc_project=12751725; 
-var sc_invisible=1; 
-var sc_security="35d8e5a4"; 
-</script>
+No user data are collected, apart from basic analytics like number of visitors and pageviews,
+provided by the StatCounter service. You can [click here](https://statcounter.com/about/legal/)
+to read their privacy policy.
 
-<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
 
-<noscript>
-<div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-<img class="statcounter" src="https://c.statcounter.com/12751725/0/35d8e5a4/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a>
-</div>
-</noscript>
+**Terms of Use**
 
-<!-- End of Statcounter Code -->'''
+You are free to use any plots or datasets that are provided in this website, 
+under the term of giving appropriate credit and referencing [StatsEuropa.eu](https://statseuropa.eu).
 
+'''
+
+#if st.button("Privacy and Terms of Use"):
+st.info(terms)
+
+st.components.v1.html(footer)
 st.components.v1.html(tracking)
