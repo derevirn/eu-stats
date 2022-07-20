@@ -3,7 +3,7 @@ footer = """
 footer {visibility: hidden;}    
 
 .footer_ {
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   width: 100%;

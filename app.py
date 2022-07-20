@@ -22,14 +22,13 @@ st.markdown(desc)
 plot_container = st.container()
 
 col1, col2 = st.columns(2)
-col1.selectbox("Select a Country", countries.keys(), index = 9, key = 'country')
-col2.selectbox('Select a Category', ['Economy', 'Society', 'Environment', 'COVID-19'],
-                key = 'category')
-indicator = st.selectbox('Select a Statistical Indicator', get_option())
+country = col1.selectbox("Select a Country", countries.keys(), index = 9)
+category = col2.selectbox('Select a Category', ['Economy', 'Society', 'Environment', 'COVID-19'])
+indicator = st.selectbox('Select a Statistical Indicator', get_keys(option_dict, category))
 
 #selection = session['indicator']
 df_func = option_dict[indicator]['df_func']
-df = df_func(session['country'])
+df = df_func(country)
 if df.shape[0] == 0:
     st.warning("No data available, please select another country or indicator", )
  
@@ -43,32 +42,35 @@ with st.expander("Display Tabular Dataset"):
 figure = create_figure(df, option_dict[indicator])
 
 with plot_container:
-    st.write("##### {} - {}".format(session['country'], indicator))
+    st.write("##### {} - {}".format(country, indicator))
     st.plotly_chart(figure, use_container_width = True)
 
     source = '<div style="text-align: right; margin-top: -35px"> Source: {}</div>'
     source = source.format(option_dict[indicator]['source'])
     st.markdown(source, unsafe_allow_html = True) 
 
-terms = '''
+
+terms = ''' &nbsp; 
+
+-------------------
 ##### Privacy & Terms
 
 **Privacy**
 
 No user data are collected, apart from basic analytics like number of visitors and pageviews,
 provided by the StatCounter service. You can [click here](https://statcounter.com/about/legal/)
-to read their privacy policy.
-
+to read their privacy policy.  
 
 **Terms of Use**
 
-You are free to use any plots or datasets that are provided in this website, 
+You are free to use any plots or datasets that are available on this website, 
 under the term of giving appropriate credit and referencing [StatsEuropa.eu](https://statseuropa.eu).
 
+--------------------
 '''
 
 #if st.button("Privacy and Terms of Use"):
-st.info(terms)
+st.markdown(terms)
 
 st.components.v1.html(footer)
 st.components.v1.html(tracking)
