@@ -72,5 +72,5 @@ under the term of giving appropriate credit and referencing [StatsEuropa.eu](htt
 #if st.button("Privacy and Terms of Use"):
 st.markdown(terms)
 
-st.components.v1.html(footer)
+st.markdown(footer, unsafe_allow_html= True)
 st.components.v1.html(tracking)
