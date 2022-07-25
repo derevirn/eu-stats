@@ -7,7 +7,7 @@ from .nuts2 import *
 
 @st.cache
 def get_geojson():
-    nuts2_polygons = 'https://raw.githubusercontent.com/eurostat/Nuts2json/master/2021/4326/10M/nutsrg_2.json'
+    nuts2_polygons = 'https://raw.githubusercontent.com/eurostat/Nuts2json/master/2021/4326/20M/nutsrg_2.json'
     with urlopen(nuts2_polygons) as response:
         regions = json.load(response)
 

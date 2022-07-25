@@ -1,7 +1,8 @@
 from .datasets import *
 
 option_dict = {
-#Economy
+
+    #Economy
 
     'National GDP (Current Prices in Billions of Euro)': {
         'df_func': get_gdp,
@@ -88,6 +89,15 @@ option_dict = {
 
     },
 
+    'Gini Income Inequality Coefficient (Scale from 0 to 100)': {
+        'df_func': get_gini,
+        'category': 'Economy',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
     #Society
 
      'National Population (Absolute Number)': {
@@ -117,7 +127,7 @@ option_dict = {
 
     },
 
-    'National Percentage of People at Risk of Poverty (Population %)': {
+    'National Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
         'df_func': get_poverty_risk,
         'category': 'Society',
         'plot_type': 'line',
@@ -126,7 +136,7 @@ option_dict = {
 
     },
 
-    'Regional Percentage of People at Risk of Poverty (Population %)': {
+    'Regional Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
         'df_func': get_poverty_risk_region,
         'category': 'Society',
         'plot_type': 'choropleth',
@@ -134,6 +144,74 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
+
+    #Health
+
+    'National Life Expectancy at Birth (Years)': {
+        'df_func': get_life_expectancy,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },    
+
+    'Regional Life Expectancy at Birth (Years)': {
+        'df_func': get_life_expectancy_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'National Availability of Doctors (Per 100000 Inhabitants)': {
+        'df_func': get_doctors,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'Regional Availability of Doctors (Per 100000 Inhabitants)': {
+        'df_func': get_doctors_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+
+    'National Availability of Hospital Beds (Per 100000 Inhabitants)': {
+        'df_func': get_hospital_beds,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'Regional Availability of Hospital Beds (Per 100000 Inhabitants)': {
+        'df_func': get_hospital_beds_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'Healthcare Expenditure (Percentage of GDP %)': {
+        'df_func': get_healthcare_expenditure,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+
 
     #Environment
 

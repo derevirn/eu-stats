@@ -23,7 +23,8 @@ plot_container = st.container()
 
 col1, col2 = st.columns(2)
 country = col1.selectbox("Select a Country", countries.keys(), index = 9)
-category = col2.selectbox('Select a Category', ['Economy', 'Society', 'Environment', 'COVID-19'])
+category = col2.selectbox('Select a Category',
+                         ['Economy', 'Society', 'Health', 'Environment', 'COVID-19'])
 indicator = st.selectbox('Select a Statistical Indicator', get_keys(option_dict, category))
 
 #selection = session['indicator']

@@ -131,6 +131,17 @@ def get_inflation(country):
 
     return df
 
+@st.cache(ttl = SEC_IN_DAY)
+def get_gini(country):
+    country = countries[country]
+    params = {'geo': country}
+    df = client.get_dataset('ilc_di12', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+
 ###############################################################################
 
 #Society 
@@ -196,6 +207,91 @@ def get_gender_pay_gap(country):
     df = client.get_dataset('sdg_05_20', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+##############################################################################
+
+#Health
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_life_expectancy(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T', 'age': 'Y_LT1' }
+    df = client.get_dataset('demo_mlexpec', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_life_expectancy_region(country):
+    country = countries[country]
+    params = {'sex': 'T', 'geo': codes[country]}
+    df = client.get_dataset('tgs00101', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_doctors(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'P_HTHAB',
+              'wstatus': 'PRACT', 'isco08': 'OC221' }
+    df = client.get_dataset('hlth_rs_prs1', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_doctors_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'unit': 'P_HTHAB',
+              'isco08': 'OC221' }
+    df = client.get_dataset('hlth_rs_prsrg', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_healthcare_expenditure(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'PC_GDP', 'icha11_hc': 'TOT_HC'}
+    df = client.get_dataset('hlth_sha11_hc', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_hospital_beds(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'P_HTHAB',
+              'facility': 'HBEDT' }
+    df = client.get_dataset('tps00046', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_hospital_beds_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'unit': 'P_HTHAB',
+              'facility': 'HBEDT' }
+    df = client.get_dataset('hlth_rs_bdsrg', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
