@@ -1,0 +1,243 @@
+region_name,GDP,Country,EU Region,GDP per Capita,Unemployment %,Life Expectancy,Doctors per 100000,Fatal Road Accidents per Million,Tertiary Educational Attainment %,Population Density,People at Risk of Poverty %,Regular Internet Users %
+Abruzzo,30.89,IT,Southern Europe,24000.00,9.30,82.90,435.45,46.00,21.20,120.50,25.00,78.00
+Alentejo,12.44,PT,Southern Europe,17700.00,6.60,80.20,310.06,135.00,21.40,22.70,22.00,70.00
+Algarve,8.71,PT,Southern Europe,19900.00,8.30,80.30,419.03,75.00,24.40,88.90,23.20,76.00
+Alsace,59.58,FR,Western Europe,31000.00,7.10,81.80,362.21,30.00,39.00,230.60,,75.00
+Andalucía,150.56,ES,Southern Europe,17700.00,21.70,81.70,371.83,30.00,32.50,97.40,37.70,84.00
+Aquitaine,103.98,FR,Western Europe,29600.00,7.40,83.50,363.49,47.00,36.00,83.90,,81.00
+Aragón,35.29,ES,Southern Europe,26500.00,10.20,82.30,502.84,51.00,39.70,27.90,21.10,85.00
+Arnsberg,125.49,DE,Western Europe,35100.00,4.30,80.20,,21.00,25.50,449.10,18.50,
+Auvergne,37.18,FR,Western Europe,27000.00,7.00,82.10,311.28,52.00,31.20,52.60,,68.00
+"Aνατολική Μακεδονία, Θράκη (Anatoliki Makedonia, Thraki)",6.49,EL,Southern Europe,10900.00,18.50,80.00,510.88,47.00,24.40,42.80,35.20,
+Aττική (Attiki),78.18,EL,Southern Europe,20900.00,11.90,81.10,813.51,40.00,41.00,987.50,24.80,
+Basilicata,11.64,IT,Southern Europe,21200.00,8.30,82.80,351.49,33.00,17.60,55.70,34.70,74.00
+Basse-Normandie ,38.75,FR,Western Europe,26400.00,6.40,82.10,303.75,55.00,32.60,82.60,,79.00
+Berlin,155.17,DE,Western Europe,42300.00,5.70,80.90,,14.00,42.90,4322.90,19.30,
+Bourgogne,45.36,FR,Western Europe,27900.00,7.10,81.70,295.55,62.00,35.00,51.30,,77.00
+Brandenburg,74.92,DE,Western Europe,29700.00,3.00,80.60,,56.00,29.20,86.70,17.00,
+Bratislavský kraj,26.19,SK,Central and Eastern Europe,38900.00,2.60,78.80,648.52,36.00,45.60,328.80,7.90,90.00
+Braunschweig,75.52,DE,Western Europe,47400.00,3.80,80.80,,40.00,32.00,197.30,18.10,
+Bremen,31.93,DE,Western Europe,46900.00,6.90,80.00,,21.00,30.80,1744.50,26.50,
+Bretagne,99.65,FR,Western Europe,29400.00,5.80,82.60,325.67,41.00,38.10,122.40,,80.00
+Bucureşti-Ilfov,60.31,RO,Central and Eastern Europe,26000.00,3.50,75.50,617.92,46.00,40.50,1321.90,14.00,77.00
+Budapest,50.43,HU,Central and Eastern Europe,29000.00,2.90,77.90,570.91,19.00,49.80,3433.80,15.60,92.00
+Burgenland,8.92,AT,Western Europe,30200.00,5.10,81.80,434.45,61.00,33.10,77.80,,78.00
+Calabria,30.90,IT,Southern Europe,16500.00,18.00,82.50,388.11,32.00,16.00,126.50,39.80,72.00
+Campania,102.83,IT,Southern Europe,18100.00,19.30,81.20,390.99,31.00,16.30,422.20,49.70,74.00
+Canarias,39.16,ES,Southern Europe,17400.00,23.20,83.40,394.47,22.00,34.40,299.40,35.00,84.00
+Cantabria,12.87,ES,Southern Europe,22100.00,11.50,83.20,515.45,27.00,42.50,110.50,19.40,82.00
+Castilla y León,55.40,ES,Southern Europe,23200.00,11.40,82.40,465.79,52.00,39.00,25.60,16.70,83.00
+Castilla-La Mancha,39.57,ES,Southern Europe,19400.00,15.60,81.10,282.57,47.00,30.80,25.80,30.70,84.00
+Cataluña,212.93,ES,Southern Europe,27800.00,11.60,82.30,489.63,27.00,42.30,238.10,18.80,88.00
+Centre — Val de Loire,71.57,FR,Western Europe,27800.00,7.20,82.40,260.16,43.00,31.90,65.40,,76.00
+Centro (PT),38.41,PT,Southern Europe,17300.00,5.80,81.50,500.38,66.00,26.20,79.20,20.40,72.00
+Centru,24.57,RO,Central and Eastern Europe,10600.00,5.10,74.40,321.08,85.00,17.10,68.20,24.40,72.00
+Champagne-Ardenne,36.66,FR,Western Europe,27800.00,8.90,81.00,289.95,56.00,24.80,51.50,,76.00
+Chemnitz,41.28,DE,Western Europe,29100.00,2.30,80.00,,47.00,27.00,219.90,18.30,
+Ciudad de Ceuta,1.64,ES,Southern Europe,19500.00,26.60,79.80,905.79,24.00,25.70,4222.90,45.90,88.00
+Ciudad de Melilla,1.51,ES,Southern Europe,17900.00,19.80,79.30,,12.00,34.30,6041.50,38.50,87.00
+Comunidad Foral de Navarra,19.26,ES,Southern Europe,29300.00,10.60,83.40,540.39,30.00,48.40,63.10,11.70,86.00
+Comunidad de Madrid,216.53,ES,Southern Europe,32000.00,11.60,82.30,519.84,16.00,50.20,839.70,19.00,90.00
+Comunitat Valenciana ,104.72,ES,Southern Europe,20800.00,15.90,82.60,393.03,26.00,38.00,216.20,27.00,87.00
+Corse,8.82,FR,Western Europe,25500.00,9.10,84.00,301.69,49.00,39.30,39.60,,74.00
+Darmstadt,203.86,DE,Western Europe,50700.00,4.10,81.80,,27.00,32.70,542.20,13.50,
+Detmold,78.67,DE,Western Europe,38300.00,4.10,81.40,,34.00,25.90,316.30,15.50,
+Dolnośląskie,43.81,PL,Central and Eastern Europe,15100.00,4.00,76.20,,58.00,36.10,144.90,14.50,
+Drenthe,15.58,NL,Western Europe,31500.00,3.50,81.60,295.79,59.00,34.60,184.50,14.30,94.00
+Dresden,50.63,DE,Western Europe,31800.00,3.30,80.80,,26.00,32.10,205.60,16.60,
+Dél-Alföld,12.62,HU,Central and Eastern Europe,10300.00,4.50,75.40,358.32,54.00,21.60,68.10,14.90,79.00
+Dél-Dunántúl,8.44,HU,Central and Eastern Europe,9700.00,4.80,75.60,359.37,55.00,18.50,63.70,24.60,82.00
+Düsseldorf,217.05,DE,Western Europe,41700.00,4.50,80.50,,24.00,28.90,1006.70,20.50,
+Eastern and Midland,186.17,IE,Western Europe,75700.00,6.40,82.60,,21.00,53.90,169.80,19.00,95.00
+Eesti,26.83,EE,Northern Europe,20200.00,6.20,78.90,346.90,45.00,40.10,30.50,,85.00
+Emilia-Romagna,149.36,IT,Southern Europe,33600.00,5.50,82.60,425.23,50.00,23.30,201.90,15.50,83.00
+Etelä-Suomi,43.47,FI,Northern Europe,37900.00,7.50,81.90,,42.00,43.50,36.60,16.30,91.00
+Extremadura,19.39,ES,Southern Europe,18300.00,19.50,81.80,306.95,38.00,26.70,26.00,37.70,81.00
+Flevoland,14.63,NL,Western Europe,34300.00,4.60,81.70,126.49,24.00,35.00,292.50,15.80,92.00
+Franche-Comté,30.19,FR,Western Europe,25500.00,7.00,81.60,307.48,54.00,33.80,72.60,,78.00
+Freiburg,86.68,DE,Western Europe,38100.00,3.00,82.20,,34.00,33.60,244.90,13.50,
+Friesland (NL),21.00,NL,Western Europe,32300.00,4.50,81.90,237.36,54.00,34.30,191.00,16.70,91.00
+Friuli-Venezia Giulia,36.88,IT,Southern Europe,30600.00,5.70,82.80,404.61,39.00,21.40,159.90,13.80,82.00
+Galicia,59.11,ES,Southern Europe,21900.00,11.70,83.70,474.96,38.00,40.30,92.00,24.30,81.00
+Gelderland,82.04,NL,Western Europe,39200.00,3.90,81.40,371.53,41.00,38.10,415.80,14.70,90.00
+Gießen,36.12,DE,Western Europe,34400.00,3.50,81.00,,46.00,30.00,194.90,17.10,
+Grad Zagreb,17.55,HR,Central and Eastern Europe,23400.00,5.50,,,,,,,
+Groningen,23.24,NL,Western Europe,39700.00,5.40,81.10,546.22,46.00,40.60,247.90,23.00,90.00
+Guadeloupe,9.29,FR,Western Europe,22600.00,17.10,80.60,277.88,124.00,23.30,247.00,,65.00
+Guyane,4.35,FR,Western Europe,15000.00,14.60,,219.22,115.00,18.70,3.40,,79.00
+Hamburg,119.14,DE,Western Europe,64400.00,4.40,81.40,,8.00,36.70,2597.50,23.70,
+Hannover,84.49,DE,Western Europe,39300.00,2.80,80.90,,43.00,28.30,239.00,17.60,
+Haute-Normandie ,51.35,FR,Western Europe,27600.00,7.60,81.10,274.59,35.00,31.80,151.20,,73.00
+Helsinki-Uusimaa,93.28,FI,Northern Europe,55000.00,7.70,82.30,,27.00,54.90,184.70,10.10,95.00
+Hovedstaden,128.90,DK,Northern Europe,69700.00,5.70,81.50,500.65,15.00,53.10,756.00,17.50,95.00
+Ile-de-France,710.09,FR,Western Europe,57400.00,8.00,82.70,386.90,20.00,54.30,1026.80,,83.00
+Illes Balears,26.79,ES,Southern Europe,22000.00,14.80,83.90,366.83,31.00,34.80,241.20,15.10,89.00
+Jadranska Hrvatska,15.41,HR,Central and Eastern Europe,11500.00,9.50,79.30,327.82,71.00,26.40,56.00,22.00,78.00
+Jihovýchod,31.79,CZ,Central and Eastern Europe,18700.00,2.40,78.80,430.81,58.00,27.70,124.00,12.50,80.00
+Jihozápad,20.98,CZ,Central and Eastern Europe,17000.00,2.40,78.60,377.68,62.00,19.80,71.80,9.60,80.00
+Karlsruhe,123.72,DE,Western Europe,44000.00,3.30,81.80,,33.00,34.50,409.30,14.50,
+Kassel,44.27,DE,Western Europe,36300.00,2.90,80.90,,41.00,28.10,147.50,15.30,
+Koblenz,50.57,DE,Western Europe,33700.00,2.90,81.00,,35.00,27.30,186.70,19.80,
+Kujawsko-pomorskie,23.03,PL,Central and Eastern Europe,11100.00,4.40,76.30,,65.00,26.60,116.80,23.20,
+Kärnten,20.70,AT,Western Europe,36900.00,5.60,81.40,485.10,62.00,32.10,59.90,,75.00
+Köln,193.31,DE,Western Europe,43200.00,4.00,81.30,,21.00,32.20,613.40,19.70,
+Közép-Dunántúl,13.46,HU,Central and Eastern Europe,12700.00,2.10,75.40,244.93,73.00,22.10,99.10,13.50,80.00
+La Rioja,8.13,ES,Southern Europe,25700.00,11.50,82.50,349.48,51.00,38.50,62.60,15.20,82.00
+La Réunion ,19.15,FR,Western Europe,22100.00,17.90,81.90,337.69,50.00,22.90,345.70,,61.00
+Languedoc-Roussillon,74.01,FR,Western Europe,25600.00,11.40,82.70,365.77,48.00,41.00,104.40,,73.00
+Latvija,29.47,LV,Northern Europe,15500.00,7.60,75.50,326.73,73.00,37.80,30.20,,84.00
+Lazio,186.30,IT,Southern Europe,32400.00,10.00,83.10,473.79,45.00,27.00,343.00,24.80,83.00
+Leipzig,34.97,DE,Western Europe,33300.00,4.50,80.80,,39.00,37.00,268.40,20.20,
+Liguria,46.09,IT,Southern Europe,30300.00,8.40,81.90,462.36,39.00,21.80,284.30,17.60,84.00
+Limburg (NL),45.19,NL,Western Europe,40500.00,3.80,80.90,354.09,47.00,34.60,517.70,15.30,88.00
+Limousin,18.08,FR,Western Europe,24800.00,6.30,82.50,337.16,47.00,33.80,42.90,,76.00
+Lombardia,365.51,IT,Southern Europe,36500.00,5.90,81.40,372.88,32.00,21.70,435.80,16.20,82.00
+Lorraine,56.55,FR,Western Europe,24300.00,8.50,81.00,302.64,38.00,32.50,98.60,,77.00
+Lubelskie,19.56,PL,Central and Eastern Europe,9300.00,5.20,76.50,,75.00,33.40,84.00,28.80,
+Lubuskie,11.23,PL,Central and Eastern Europe,11100.00,,75.80,,76.00,27.90,72.60,14.50,
+Luxembourg,64.22,LU,Western Europe,101800.00,5.30,82.20,,42.00,47.10,239.80,,94.00
+Länsi-Suomi,52.23,FI,Northern Europe,37900.00,7.70,82.30,,49.00,45.90,23.70,,93.00
+Lüneburg,49.23,DE,Western Europe,28600.00,3.00,81.00,,51.00,26.90,111.40,16.20,
+Malta,13.07,MT,Southern Europe,25300.00,3.50,82.30,,23.00,30.60,1595.10,,84.00
+Marche,39.66,IT,Southern Europe,26300.00,7.10,83.20,382.59,46.00,21.20,161.90,19.10,80.00
+Martinique ,8.86,FR,Western Europe,24600.00,12.80,81.90,305.98,78.00,27.10,328.60,,68.00
+Mayotte,2.76,FR,Western Europe,9700.00,,73.30,81.01,36.00,,750.80,,
+Mazowiecki regionalny,27.11,PL,Central and Eastern Europe,11600.00,3.80,75.30,,123.00,26.50,79.50,21.30,
+Małopolskie,42.61,PL,Central and Eastern Europe,12500.00,3.20,77.60,,47.00,33.80,224.00,18.50,
+Mecklenburg-Vorpommern,46.59,DE,Western Europe,28900.00,3.80,80.40,,44.00,27.30,71.30,23.20,
+Mellersta Norrland,14.52,SE,Northern Europe,38600.00,6.30,81.40,380.37,48.00,37.00,5.30,23.60,92.00
+Midi-Pyrénées,94.73,FR,Western Europe,30400.00,6.10,83.60,342.55,48.00,43.30,67.80,,77.00
+Midtjylland,65.33,DK,Northern Europe,49200.00,4.80,82.10,407.93,32.00,38.90,103.70,16.30,96.00
+Mittelfranken,79.56,DE,Western Europe,44800.00,3.60,80.90,,29.00,33.80,245.70,18.40,
+Molise,6.09,IT,Southern Europe,20500.00,10.90,82.40,415.35,83.00,18.50,68.20,38.10,72.00
+Moravskoslezsko,18.78,CZ,Central and Eastern Europe,15700.00,4.60,76.80,375.90,36.00,21.10,226.20,14.90,84.00
+Münster,89.38,DE,Western Europe,34100.00,3.40,80.90,,26.00,26.60,380.10,18.40,
+Niederbayern,48.48,DE,Western Europe,38900.00,1.80,80.80,,54.00,24.40,121.00,,
+Niederösterreich,59.52,AT,Western Europe,35300.00,5.10,81.30,471.11,53.00,33.00,88.90,,84.00
+Noord-Brabant,120.73,NL,Western Europe,47000.00,3.20,81.10,265.28,39.00,41.10,514.80,13.90,91.00
+Noord-Holland,171.05,NL,Western Europe,59300.00,4.50,81.70,487.96,30.00,49.90,1041.20,17.00,93.00
+Nord-Est,22.81,RO,Central and Eastern Europe,7200.00,6.80,73.30,255.50,98.00,11.80,87.50,47.10,64.00
+Nord-Pas de Calais,113.78,FR,Western Europe,27900.00,8.80,80.40,319.98,23.00,32.10,327.40,,76.00
+Nord-Vest,26.90,RO,Central and Eastern Europe,10600.00,3.10,74.10,335.01,80.00,20.10,75.00,19.30,75.00
+Nordjylland,26.33,DK,Northern Europe,44600.00,5.00,81.80,346.36,29.00,32.00,76.40,17.70,93.00
+Norra Mellansverige,31.23,SE,Northern Europe,36400.00,9.70,82.20,359.02,31.00,35.30,13.50,18.30,91.00
+Norte,60.33,PT,Southern Europe,16900.00,6.60,81.30,531.76,39.00,24.90,169.30,23.20,70.00
+Northern and Western,26.43,IE,Western Europe,30100.00,5.10,82.90,,38.00,46.40,35.00,25.40,97.00
+Nyugat-Dunántúl,13.28,HU,Central and Eastern Europe,13300.00,2.20,76.00,283.58,49.00,25.00,88.60,16.30,82.00
+Oberbayern,273.50,DE,Western Europe,58000.00,2.70,82.40,,36.00,41.80,273.40,14.80,
+Oberfranken,40.74,DE,Western Europe,38300.00,3.30,80.70,,32.00,27.70,147.80,18.70,
+Oberpfalz,46.41,DE,Western Europe,41700.00,2.50,80.70,,42.00,29.70,115.20,,
+Oberösterreich,65.24,AT,Western Europe,43700.00,3.80,81.70,426.53,45.00,31.10,126.80,,81.00
+Opolskie,10.53,PL,Central and Eastern Europe,10700.00,2.80,76.60,,69.00,27.60,101.40,17.00,
+Overijssel,45.70,NL,Western Europe,39300.00,3.80,81.20,265.13,40.00,37.70,344.90,15.80,90.00
+Panonska Hrvatska,9.17,HR,Central and Eastern Europe,7900.00,9.70,,,,,,,
+Pays de la Loire,116.15,FR,Western Europe,30100.00,6.00,83.20,292.99,42.00,35.90,118.30,,78.00
+País Vasco,66.56,ES,Southern Europe,30400.00,9.80,83.40,563.31,19.00,53.40,303.70,14.40,84.00
+Pest,14.60,HU,Central and Eastern Europe,11200.00,3.00,76.00,258.85,56.00,30.70,205.10,19.10,86.00
+Picardie,47.85,FR,Western Europe,24700.00,9.70,80.40,257.53,50.00,32.60,99.40,,77.00
+Piemonte,126.20,IT,Southern Europe,29400.00,7.30,81.60,370.31,42.00,19.80,172.30,16.70,80.00
+Podkarpackie,20.07,PL,Central and Eastern Europe,9400.00,4.80,77.50,,63.00,29.60,117.80,22.30,
+Podlaskie,11.79,PL,Central and Eastern Europe,10000.00,3.20,77.10,,68.00,31.40,57.50,20.80,
+Pohjois- ja Itä-Suomi,45.78,FI,Northern Europe,35900.00,7.80,81.50,,48.00,42.00,6.30,19.00,91.00
+Poitou-Charentes,50.04,FR,Western Europe,27400.00,8.60,82.80,298.29,56.00,33.40,70.00,,80.00
+Pomorskie,30.46,PL,Central and Eastern Europe,13000.00,2.30,77.20,,73.00,34.90,130.60,15.30,
+Praha,58.04,CZ,Central and Eastern Europe,43700.00,2.30,80.30,736.22,17.00,45.90,2714.30,7.90,88.00
+Principado de Asturias,21.47,ES,Southern Europe,21100.00,12.50,82.20,398.31,22.00,44.20,96.60,24.60,85.00
+Prov. Antwerpen,88.19,BE,Western Europe,47000.00,5.20,82.00,271.16,33.00,41.00,665.80,,86.00
+Prov. Brabant Wallon,22.20,BE,Western Europe,54400.00,6.80,81.90,525.24,47.00,59.70,369.70,,92.00
+Prov. Hainaut,33.11,BE,Western Europe,24500.00,10.30,78.00,253.30,57.00,32.40,354.80,,77.00
+Prov. Limburg (BE),28.07,BE,Western Europe,31800.00,3.40,82.30,256.65,47.00,37.70,367.50,,87.00
+Prov. Liège,30.96,BE,Western Europe,27800.00,9.40,78.60,358.81,56.00,39.70,289.70,,84.00
+Prov. Luxembourg (BE),6.95,BE,Western Europe,23900.00,5.60,79.90,231.48,100.00,42.50,64.60,,85.00
+Prov. Namur,13.18,BE,Western Europe,26400.00,7.60,79.30,351.89,84.00,40.80,135.90,,80.00
+Prov. Oost-Vlaanderen,54.76,BE,Western Europe,35800.00,2.80,81.80,292.63,45.00,44.10,512.30,,90.00
+Prov. Vlaams-Brabant,49.71,BE,Western Europe,42800.00,4.00,82.60,409.53,28.00,51.40,544.70,,91.00
+Prov. West-Vlaanderen,45.61,BE,Western Europe,37900.00,3.60,81.90,262.07,42.00,38.70,380.80,,89.00
+Provence-Alpes-Côte d’Azur,161.29,FR,Western Europe,31500.00,8.10,83.00,404.03,45.00,40.00,162.40,,76.00
+Provincia Autonoma di Bolzano/Bozen,23.72,IT,Southern Europe,44400.00,3.80,82.80,324.38,58.00,17.60,72.20,11.50,82.00
+Provincia Autonoma di Trento,20.04,IT,Southern Europe,36900.00,4.80,82.80,329.25,46.00,22.40,88.20,14.00,83.00
+Puglia,71.64,IT,Southern Europe,18200.00,14.60,82.70,384.75,40.00,15.30,206.80,37.40,70.00
+Região Autónoma da Madeira,4.46,PT,Southern Europe,17600.00,8.00,79.10,442.35,39.00,22.90,318.00,32.20,76.00
+Região Autónoma dos Açores,4.15,PT,Southern Europe,17100.00,7.20,77.90,354.58,70.00,15.80,105.30,36.70,71.00
+Región de Murcia,29.94,ES,Southern Europe,19800.00,14.30,82.40,452.19,26.00,32.80,132.40,31.90,87.00
+Rheinhessen-Pfalz,76.69,DE,Western Europe,37200.00,4.40,81.20,,23.00,32.70,303.20,16.50,
+Rhône-Alpes,231.70,FR,Western Europe,34300.00,7.20,82.80,345.62,39.00,43.20,150.90,,78.00
+Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest,83.85,BE,Western Europe,68400.00,12.40,79.40,390.38,13.00,49.30,7526.70,,89.00
+Saarland,33.95,DE,Western Europe,34500.00,3.00,80.20,,21.00,26.30,385.50,21.60,
+Sachsen-Anhalt,63.54,DE,Western Europe,29000.00,4.40,79.70,,56.00,22.60,108.70,18.60,
+Salzburg,27.95,AT,Western Europe,49900.00,4.60,82.20,581.16,50.00,32.50,78.90,,81.00
+Sardegna,32.38,IT,Southern Europe,20200.00,13.50,82.80,482.15,59.00,17.70,68.30,28.10,80.00
+Schleswig-Holstein,98.36,DE,Western Europe,33800.00,3.40,81.20,,37.00,26.90,188.20,20.80,
+Schwaben,74.76,DE,Western Europe,39300.00,2.90,81.80,,37.00,32.40,191.50,16.30,
+Severovýchod,25.46,CZ,Central and Eastern Europe,16800.00,2.40,78.70,350.83,53.00,20.50,123.70,12.90,77.00
+Severozápad,15.20,CZ,Central and Eastern Europe,13600.00,4.30,76.40,325.10,56.00,13.70,131.70,21.50,76.00
+Sicilia,83.33,IT,Southern Europe,17200.00,18.70,81.90,441.16,33.00,14.90,192.10,48.70,70.00
+Sjeverna Hrvatska,8.06,HR,Central and Eastern Europe,10000.00,4.60,,,,,,,
+Sjælland,31.53,DK,Northern Europe,37600.00,5.00,80.60,364.26,26.00,30.40,118.30,12.30,94.00
+Småland med öarna,33.34,SE,Northern Europe,38200.00,7.50,82.50,382.98,23.00,37.20,26.20,16.40,90.00
+Sostinės regionas,21.14,LT,Northern Europe,25600.00,4.80,75.80,580.98,50.00,58.60,86.60,21.20,81.00
+Southern,160.27,IE,Western Europe,97500.00,6.50,82.50,,38.00,45.60,55.60,20.40,92.00
+Steiermark,48.59,AT,Western Europe,39000.00,4.30,81.10,521.32,42.00,31.10,76.60,,75.00
+Stockholm,153.56,SE,Northern Europe,64400.00,8.20,82.30,458.82,5.00,53.70,361.80,14.80,94.00
+Stredné Slovensko,17.92,SK,Central and Eastern Europe,13400.00,7.50,76.80,330.86,56.00,23.70,82.70,21.50,79.00
+Stuttgart,215.44,DE,Western Europe,51900.00,3.10,82.30,,24.00,34.70,393.30,13.30,
+Střední Morava,19.96,CZ,Central and Eastern Europe,16500.00,2.20,77.80,380.58,40.00,22.30,133.20,12.90,81.00
+Střední Čechy,25.05,CZ,Central and Eastern Europe,18000.00,2.50,78.50,265.17,62.00,24.20,128.50,9.60,79.00
+Sud-Est,21.53,RO,Central and Eastern Europe,9100.00,6.00,73.70,219.85,95.00,13.10,70.90,40.10,64.00
+Sud-Muntenia,24.95,RO,Central and Eastern Europe,8600.00,7.70,73.70,159.76,99.00,13.10,86.10,36.50,65.00
+Sud-Vest Oltenia,16.92,RO,Central and Eastern Europe,8900.00,9.20,75.00,311.52,90.00,16.70,66.90,38.90,62.00
+Syddanmark,58.01,DK,Northern Europe,47400.00,4.40,81.80,408.18,43.00,33.50,102.00,16.60,94.00
+Sydsverige,61.75,SE,Northern Europe,40000.00,11.20,82.60,434.48,27.00,45.40,110.10,25.40,91.00
+Thüringen,62.22,DE,Western Europe,29300.00,3.30,80.70,,39.00,29.10,132.40,19.30,
+Tirol,33.45,AT,Western Europe,44100.00,4.80,82.40,588.76,34.00,31.90,60.40,,81.00
+Toscana,111.31,IT,Southern Europe,30100.00,7.50,83.40,444.77,41.00,21.10,162.70,18.70,83.00
+Trier,16.30,DE,Western Europe,30500.00,,81.10,,51.00,31.60,108.50,21.40,
+Tübingen,80.71,DE,Western Europe,43300.00,2.90,82.50,,33.00,32.20,214.20,14.10,
+Umbria,21.45,IT,Southern Europe,24700.00,6.60,83.70,456.90,52.00,23.10,105.50,13.30,83.00
+Unterfranken,53.07,DE,Western Europe,40300.00,2.30,82.00,,34.00,31.30,155.10,17.50,
+Utrecht,76.84,NL,Western Europe,58100.00,4.00,81.80,590.14,25.00,55.70,934.60,15.60,93.00
+Valle d’Aosta/Vallée d’Aoste,4.52,IT,Southern Europe,36300.00,7.30,81.40,366.99,0.00,18.90,38.60,8.10,84.00
+Veneto,151.91,IT,Southern Europe,31200.00,5.30,83.10,345.71,47.00,19.80,282.00,11.10,81.00
+Vest,20.72,RO,Central and Eastern Europe,11700.00,3.50,74.00,416.35,81.00,17.00,55.70,21.90,71.00
+Vidurio ir vakarų Lietuvos regionas ,28.37,LT,Northern Europe,14400.00,8.20,74.80,405.84,68.00,37.80,37.20,28.30,76.00
+Vorarlberg,18.21,AT,Western Europe,45700.00,4.10,82.50,432.63,40.00,29.20,156.30,,79.00
+Vzhodna Slovenija,20.39,SI,Central and Eastern Europe,18500.00,5.00,79.50,276.15,41.00,30.80,89.00,17.00,81.00
+Västsverige,90.35,SE,Northern Europe,43800.00,8.40,82.70,420.85,17.00,43.40,70.10,19.20,93.00
+Východné Slovensko,19.61,SK,Central and Eastern Europe,12000.00,10.90,76.60,347.60,27.00,26.60,103.90,21.20,78.00
+Warmińsko-mazurskie,13.61,PL,Central and Eastern Europe,9600.00,3.50,76.10,,82.00,23.60,61.10,24.20,
+Warszawski stołeczny,92.91,PL,Central and Eastern Europe,30000.00,2.10,78.00,,43.00,57.20,510.20,13.40,
+Weser-Ems,90.85,DE,Western Europe,35800.00,3.40,80.80,,50.00,25.00,169.80,17.10,
+Wielkopolskie,52.16,PL,Central and Eastern Europe,14900.00,2.20,76.60,,62.00,29.30,117.90,17.50,
+Wien,96.59,AT,Western Europe,50400.00,12.10,80.20,686.75,6.00,42.70,4808.90,,86.00
+Zachodniopomorskie,19.32,PL,Central and Eastern Europe,11400.00,3.50,76.20,,60.00,29.60,76.60,17.10,
+Zahodna Slovenija,26.53,SI,Central and Eastern Europe,26500.00,4.50,81.80,381.57,35.00,41.60,126.90,11.50,89.00
+Zeeland,13.99,NL,Western Europe,36400.00,3.60,82.40,165.16,57.00,31.80,212.60,14.30,97.00
+Zuid-Holland,168.99,NL,Western Europe,45000.00,5.10,81.30,369.44,22.00,44.20,1292.20,19.40,92.00
+Západné Slovensko,28.36,SK,Central and Eastern Europe,15600.00,4.70,77.10,277.43,57.00,22.40,123.00,11.30,79.00
+Área Metropolitana de Lisboa,71.43,PT,Southern Europe,24900.00,6.80,81.40,652.83,33.00,38.00,1015.90,17.80,83.00
+Åland,1.17,FI,Northern Europe,38900.00,,83.30,,0.00,41.60,19.20,,
+Észak-Alföld,13.23,HU,Central and Eastern Europe,9200.00,7.10,74.80,326.17,46.00,19.20,83.10,24.20,76.00
+Észak-Magyarország,10.56,HU,Central and Eastern Europe,9500.00,6.20,73.80,240.10,42.00,16.80,84.40,23.90,76.00
+Östra Mellansverige,66.87,SE,Northern Europe,38600.00,9.80,82.30,449.97,22.00,42.80,44.70,18.70,92.00
+Övre Norrland,23.81,SE,Northern Europe,45600.00,6.10,82.20,457.75,23.00,40.00,3.40,16.60,87.00
+Łódzkie,32.43,PL,Central and Eastern Europe,13200.00,4.40,75.30,,90.00,30.20,135.20,16.50,
+Śląskie,60.97,PL,Central and Eastern Europe,13500.00,2.90,76.10,,42.00,30.70,368.80,13.80,
+Świętokrzyskie,12.08,PL,Central and Eastern Europe,9800.00,4.40,76.10,,79.00,31.90,105.10,20.70,
+Ήπειρος (Ipeiros),3.72,EL,Southern Europe,11200.00,15.10,83.80,666.61,75.00,31.60,36.80,27.60,
+Βόρειο Αιγαίο (Voreio Aigaio),2.33,EL,Southern Europe,10100.00,13.90,82.60,320.01,52.00,29.30,59.30,35.50,
+Δυτική Ελλάδα (Dytiki Ellada),7.40,EL,Southern Europe,11400.00,17.50,81.70,494.85,89.00,25.00,59.20,40.90,
+Δυτική Μακεδονία (Dytiki Makedonia),3.32,EL,Southern Europe,12600.00,19.80,81.70,343.82,38.00,26.60,28.80,34.80,
+Θεσσαλία (Thessalia),8.71,EL,Southern Europe,12200.00,16.70,81.50,531.19,56.00,30.30,51.40,28.00,
+Ιόνια Νησιά (Ionia Nisia),2.81,EL,Southern Europe,13800.00,13.20,81.50,525.28,44.00,23.70,89.40,25.70,
+Κεντρική Μακεδονία (Kentriki Makedonia),22.70,EL,Southern Europe,12100.00,16.10,80.50,613.53,55.00,32.20,101.20,31.70,
+Κρήτη (Kriti),8.19,EL,Southern Europe,12800.00,16.30,82.60,610.65,44.00,28.00,76.50,31.60,
+Κύπρος (Kypros),21.55,CY,Southern Europe,24200.00,7.50,82.40,427.23,54.00,44.90,95.70,,89.00
+Νότιο Αιγαίο (Notio Aigaio),5.45,EL,Southern Europe,15600.00,18.80,82.60,370.19,86.00,22.50,66.10,34.50,
+Πελοπόννησος (Peloponnisos),7.65,EL,Southern Europe,13400.00,12.70,82.10,385.66,75.00,23.90,37.10,36.40,
+Στερεά Ελλάδα (Sterea Ellada),8.38,EL,Southern Europe,15100.00,17.20,82.30,312.24,86.00,25.20,36.10,29.50,
+Северен централен (Severen tsentralen),4.59,BG,Central and Eastern Europe,6000.00,6.70,72.80,333.20,81.00,26.50,53.10,35.90,70.00
+Северозападен (Severozapaden),4.19,BG,Central and Eastern Europe,5800.00,11.10,72.10,448.70,98.00,20.70,39.00,41.30,62.00
+Североизточен (Severoiztochen),6.19,BG,Central and Eastern Europe,6700.00,6.10,73.50,397.76,72.00,23.30,63.70,34.70,71.00
+Югозападен (Yugozapaden),31.01,BG,Central and Eastern Europe,14800.00,3.50,74.50,444.85,45.00,43.40,103.70,22.70,71.00
+Югоизточен (Yugoiztochen),6.36,BG,Central and Eastern Europe,6200.00,5.60,73.30,341.89,88.00,22.90,52.50,36.60,65.00
+Южен централен (Yuzhen tsentralen),8.99,BG,Central and Eastern Europe,6400.00,4.00,73.90,403.78,55.00,21.90,63.70,37.70,63.00
