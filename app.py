@@ -23,11 +23,10 @@ plot_container = st.container()
 
 col1, col2 = st.columns(2)
 country = col1.selectbox("Select a Country", countries.keys(), index = 9)
-category = col2.selectbox('Select a Category',
-                         ['Economy', 'Society', 'Health', 'Environment', 'COVID-19'])
+cat_list = ['Economy', 'Health', 'Education', 'Society', 'Environment', 'COVID-19']
+category = col2.selectbox('Select a Category', cat_list)
 indicator = st.selectbox('Select a Statistical Indicator', get_keys(option_dict, category))
 
-#selection = session['indicator']
 df_func = option_dict[indicator]['df_func']
 df = df_func(country)
 if df.shape[0] == 0:
@@ -70,7 +69,6 @@ under the term of giving appropriate credit and referencing [StatsEuropa.eu](htt
 --------------------
 '''
 
-#if st.button("Privacy and Terms of Use"):
 st.markdown(terms)
 
 st.markdown(footer, unsafe_allow_html= True)

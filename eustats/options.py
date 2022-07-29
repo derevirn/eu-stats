@@ -209,8 +209,46 @@ option_dict = {
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
-    },  
+    },
 
+
+    #Education
+
+    'National Tertiary Educational Attainment at Ages 25-64 (Population %)': {
+        'df_func': get_tertiary_attainment,
+        'category': 'Education',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional Tertiary Educational Attainment at Ages 25-64 (Population %)': {
+        'df_func': get_tertiary_attainment_region,
+        'category': 'Education',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Get Early Leavers from Education and Training at Ages 18-24 (Population %)': {
+        'df_func': get_early_leavers,
+        'category': 'Education',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Get Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
+        'df_func': get_employment_graduates,
+        'category': 'Education',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
 
 
     #Environment
@@ -238,6 +276,33 @@ option_dict = {
         'category': 'Environment',
         'plot_type': 'line',
         'columns': ['Industry Sector', 'Transport Sector', 'Households'],
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Energy Imports Dependency (Percentage of Gross Available Energy %)': {
+        'df_func': get_energy_imports,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Recycling Rate of Municipal Waste (Percentage of Total Waste %)': {
+        'df_func': get_recycling_rate,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Generation of Plastic Packaging Waste (Kilograms per Capita)': {
+        'df_func': get_plastic_waste,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },

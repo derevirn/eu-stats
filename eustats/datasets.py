@@ -297,6 +297,58 @@ def get_hospital_beds_region(country):
 
 ###############################################################################
 
+#Education
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_tertiary_attainment(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T', 'unit': 'PC',
+              'age': 'Y25-64', 'isced11': 'ED5-8'  }
+    df = client.get_dataset('edat_lfse_03', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_tertiary_attainment_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'sex': 'T', 'unit': 'PC',
+              'age': 'Y25-64', 'isced11': 'ED5-8'  }
+    df = client.get_dataset('edat_lfse_04', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_early_leavers(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T', 'unit': 'PC',
+              'age': 'Y18-24' }
+    df = client.get_dataset('sdg_04_10', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_employment_graduates(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T', 'unit': 'PC',
+              'age': 'Y20-34' }
+    df = client.get_dataset('tps00053', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+
+###############################################################################
+
 #Environment
 
 @st.cache(ttl = SEC_IN_DAY)
@@ -335,6 +387,36 @@ def get_energy_cons(country):
                'FC_IND_E': 'Industry Sector',
                'FC_TRA_E': 'Transport Sector'}
     df.rename(columns = columns, inplace = True)
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_energy_imports(country):
+    country = countries[country]
+    params = {'geo': country, 'siec': 'TOTAL'}
+    df = client.get_dataset('nrg_ind_id', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_recycling_rate(country):
+    country = countries[country]
+    params = {'geo': country}
+    df = client.get_dataset('cei_wm011', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache(ttl = SEC_IN_DAY)
+def get_plastic_waste(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'KG_HAB'}
+    df = client.get_dataset('cei_pc050', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
 
     return df
 
