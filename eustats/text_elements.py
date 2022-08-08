@@ -1,3 +1,22 @@
+terms = ''' &nbsp; 
+
+-------------------
+##### Privacy & Terms
+
+**Privacy**
+
+No user data are collected, apart from basic analytics like number of visitors and pageviews,
+provided by the StatCounter service. You can [click here](https://statcounter.com/about/legal/)
+to read their privacy policy.  
+
+**Terms of Use**
+
+You are free to use any plots or datasets that are available on this website, 
+under the term of giving appropriate credit and referencing [StatsEuropa.com](https://statseuropa.com).
+
+--------------------
+'''
+
 footer = """
 <style>
 footer {visibility: hidden;}    

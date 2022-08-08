@@ -85,11 +85,17 @@ def create_figure(df, dict_selection):
 
     return fig
 
-def lin_reg_plot(df, x, y):
+def lin_reg_plot(df, x, y, model):
 
-    fig = px.scatter(df, x = x, y = y, trendline = 'ols',
-                    height = 450, #color = 'EU Region',
-                    hover_data= ['region_name'],
+    if model == 'lowess':
+         trendline_options=dict(frac=0.6)
+    else:
+        trendline_options=None
+
+    fig = px.scatter(df, x = x, y = y, trendline = model,
+                    height = 450, trendline_options = trendline_options,
+                    hover_data= ['region_name'], 
+                    trendline_color_override = px.colors.qualitative.D3[3],
                     color_discrete_sequence=px.colors.qualitative.D3)
 
     fig.update_layout(plot_bgcolor = 'white',
@@ -142,9 +148,10 @@ def kde_plot(df, variable):
     ax.spines['right'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
     ax.spines['left'].set_visible(False)
-    #ax.get_yaxis().set_ticks([])
+    ax.get_yaxis().set_ticks([])
 
-    sns.kdeplot(data = df, x = variable,
+    sns.kdeplot(data = df, x = variable, fill = True,
+                alpha = 0.15,
                 hue = 'EU Region', ax = ax)
 
     return fig

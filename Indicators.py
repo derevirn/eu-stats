@@ -52,26 +52,6 @@ with plot_container:
     st.markdown(source, unsafe_allow_html = True) 
 
 
-terms = ''' &nbsp; 
-
--------------------
-##### Privacy & Terms
-
-**Privacy**
-
-No user data are collected, apart from basic analytics like number of visitors and pageviews,
-provided by the StatCounter service. You can [click here](https://statcounter.com/about/legal/)
-to read their privacy policy.  
-
-**Terms of Use**
-
-You are free to use any plots or datasets that are available on this website, 
-under the term of giving appropriate credit and referencing [StatsEuropa.eu](https://statseuropa.eu).
-
---------------------
-'''
-
 st.markdown(terms)
-
 st.markdown(footer, unsafe_allow_html= True)
 st.components.v1.html(tracking)
