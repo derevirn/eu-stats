@@ -25,15 +25,20 @@ st.markdown(desc, unsafe_allow_html= True)
 
 df = pd.read_csv('data/eu_regional_data.csv', index_col = 'region_name')
 df_pca = pd.read_csv('data/eu_regional_data_pca.csv', index_col = 'region_name')
-
 num_cols = list(df.columns[2:])
 
+tab_str = ['Linear Regression',
+           'Principal Component Analysis',
+           'Statistical Hypothesis Testing']
+tab1, tab2, tab3 = st.tabs(tab_str)
 
-with st.expander("Linear Regression Model Plot", expanded = True):
+with tab1:
+
+    tab1.markdown('##### Linear Regression Modeling for NUTS 2 Region Data')
+    tab1.markdown('You can hover/click on the regression line to view the coefficients \
+                   and R-Squared metric.')
 
     lin_reg_cont = st.container()
-    st.write('*You can hover/click on the regression line to view the coefficients \
-              and R-Squared metric.*')
 
     col1, col2 = st.columns(2)
     iv = col1.selectbox('Select X (Independent Variable): ', options = num_cols, index = 1 )
@@ -46,13 +51,15 @@ with st.expander("Linear Regression Model Plot", expanded = True):
         st.plotly_chart(fig1, use_container_width = True)
         if show_res :st.write(summary)
 
-with st.expander("Principal Component Analysis (PCA) Plot for NUTS 2 Regions", expanded = False):
-        
+with tab2:
+
+    tab2.markdown('##### Principal Component Analysis (PCA) Plot for NUTS 2 Region Data')
+
     fig2 = pca_plot(df_pca)
     st.plotly_chart(fig2, use_container_width = True)
 
-with st.expander("Statistical Hypothesis Testing"):
-
+with tab3:
+    tab3.markdown('##### Statistical Hypothesis Testing for NUTS 2 Region Data')
     hypothesis_cont= st.container()
 
     col3, col4 = st.columns(2)
@@ -62,7 +69,7 @@ with st.expander("Statistical Hypothesis Testing"):
     test = col4.selectbox('Select Hypothesis Test: ', options_test)
 
     with hypothesis_cont:
-
+                
         fig3 = box_plot(df, variable)
         st.plotly_chart(fig3, use_container_width = True)
 

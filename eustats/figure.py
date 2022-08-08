@@ -89,11 +89,8 @@ def lin_reg_plot(df, x, y):
     fig = px.scatter(df, x = x, y = y, trendline = 'ols',
                     height = 450, #color = 'EU Region',
                     hover_data= ['region_name'],
-                  #  facet_col = 'EU Region', facet_col_wrap = 2,
                     color_discrete_sequence=px.colors.qualitative.D3)
 
-   # hovertemplate = '%{customdata[0]}'
-   # fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(plot_bgcolor = 'white',
                     legend = dict(orientation = 'h', title = ''),
                     margin=dict(l=1, r=1, t=18, b=1, pad=1))
@@ -105,9 +102,10 @@ def pca_plot(df):
     df['pc_1'] = df['pc_1'] / 1000
     df['pc_2'] = df['pc_2'] / 1000
     fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
+                    color_discrete_sequence=px.colors.qualitative.D3,
                     title = '',
                     height = 450, size = 'GDP per Capita',
-                    hover_data = ['region_name', 'GDP per Capita'])
+                    hover_data = ['region_name', 'Country'])
 
     fig.update_layout(  margin=dict(l=1, r=1, t=15, b=1, pad=1),
                         plot_bgcolor = 'white',
@@ -115,7 +113,7 @@ def pca_plot(df):
                         yaxis_title='Principal Component 2',
                         xaxis_title='Principal Component 1')
 
-    hovertemplate = '%{customdata[0]}' 
+    hovertemplate = '%{customdata[1]} - %{customdata[0]}' 
     fig.update_traces(hovertemplate=hovertemplate)
 
     return fig
