@@ -24,7 +24,7 @@ def create_line(df, columns):
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_traces(line_width = 3)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
-                      height = 400,
+                      height = 450,
                       plot_bgcolor = 'white',
                       legend = dict(orientation = 'h', title = ''),
                       margin=dict(l=22, r=1, t=18, b=1, pad=1))
@@ -40,7 +40,7 @@ def create_bar(df, columns):
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
-                      height = 400, 
+                      height = 450, 
                       plot_bgcolor = 'white',
                       margin=dict(l=26, r=1, t=18, b=1, pad=1))
     fig.update_yaxes(automargin = False)
@@ -68,7 +68,6 @@ def create_choropleth(df, columns):
 
     return fig
 
-
 def create_figure(df, dict_selection):
 
     plot_type = dict_selection['plot_type']
@@ -84,3 +83,56 @@ def create_figure(df, dict_selection):
         fig = create_choropleth(df, columns)
 
     return fig
+
+def lin_reg_plot(df, x, y):
+    df.reset_index(inplace = True)
+    fig = px.scatter(df, x = x, y = y, trendline = 'ols',
+                    height = 450, #color = 'EU Region',
+                    hover_data= ['region_name'],
+                  #  facet_col = 'EU Region', facet_col_wrap = 2,
+                    color_discrete_sequence=px.colors.qualitative.D3)
+
+   # hovertemplate = '%{customdata[0]}'
+   # fig.update_traces(hovertemplate=hovertemplate)
+    fig.update_layout(plot_bgcolor = 'white',
+                    legend = dict(orientation = 'h', title = ''),
+                    margin=dict(l=1, r=1, t=18, b=1, pad=1))
+
+    return fig
+
+def pca_plot(df):
+    df.reset_index(inplace = True)
+    df['pc_1'] = df['pc_1'] / 1000
+    df['pc_2'] = df['pc_2'] / 1000
+    fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
+                    title = '',
+                    height = 450, size = 'GDP per Capita',
+                    hover_data = ['region_name', 'GDP per Capita'])
+
+    fig.update_layout(  margin=dict(l=1, r=1, t=15, b=1, pad=1),
+                        plot_bgcolor = 'white',
+                        legend = dict(orientation = 'h', title = ''),
+                        yaxis_title='Principal Component 2',
+                        xaxis_title='Principal Component 1')
+
+    hovertemplate = '%{customdata[0]}' 
+    fig.update_traces(hovertemplate=hovertemplate)
+
+    return fig
+
+def box_plot(df, variable):
+    df.reset_index(inplace = True)
+    fig = px.box(df, x = 'EU Region', y = variable, points = 'all',
+             color_discrete_sequence=px.colors.qualitative.D3,
+             hover_data = ['region_name'],
+             notched = True,
+             title = f'Box Plot for {variable}',
+             color = 'EU Region', height = 450)
+
+    fig.update_layout(margin=dict(l=1, r=1, t=23, b=1, pad=1),
+                    plot_bgcolor = 'white',
+                    showlegend = False,
+                    yaxis_title='', xaxis_title='')
+
+    return fig
+
