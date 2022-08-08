@@ -2,8 +2,9 @@ import streamlit as st
 from urllib.request import urlopen
 import json
 import plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
 from .nuts2 import *
-
 
 @st.cache
 def get_geojson():
@@ -85,7 +86,7 @@ def create_figure(df, dict_selection):
     return fig
 
 def lin_reg_plot(df, x, y):
-    df.reset_index(inplace = True)
+
     fig = px.scatter(df, x = x, y = y, trendline = 'ols',
                     height = 450, #color = 'EU Region',
                     hover_data= ['region_name'],
@@ -98,7 +99,7 @@ def lin_reg_plot(df, x, y):
     return fig
 
 def pca_plot(df):
-    df.reset_index(inplace = True)
+
     df['pc_1'] = df['pc_1'] / 1000
     df['pc_2'] = df['pc_2'] / 1000
     fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
@@ -119,18 +120,41 @@ def pca_plot(df):
     return fig
 
 def box_plot(df, variable):
-    df.reset_index(inplace = True)
+
     fig = px.box(df, x = 'EU Region', y = variable, points = 'all',
-             color_discrete_sequence=px.colors.qualitative.D3,
-             hover_data = ['region_name'],
-             notched = True,
-             title = f'Box Plot for {variable}',
-             color = 'EU Region', height = 450)
+            color_discrete_sequence=px.colors.qualitative.D3,
+            hover_data = ['region_name'],
+            notched = True, title = '',
+            color = 'EU Region', height = 450)
 
     fig.update_layout(margin=dict(l=1, r=1, t=23, b=1, pad=1),
                     plot_bgcolor = 'white',
                     showlegend = False,
                     yaxis_title='', xaxis_title='')
+    return fig
+
+def kde_plot(df, variable):
+
+    fig, ax = plt.subplots(figsize = (10,6))
+
+    ax.grid(False)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    #ax.get_yaxis().set_ticks([])
+
+    sns.kdeplot(data = df, x = variable,
+                hue = 'EU Region', ax = ax)
+
+    return fig
+
+def correlation_heatmap(df):
+
+    fig, ax = plt.subplots(figsize = (10,8))
+
+    sns.heatmap(df.corr().round(decimals=2),
+    annot=True, ax = ax)
 
     return fig
 
