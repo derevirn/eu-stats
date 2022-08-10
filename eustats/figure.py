@@ -25,7 +25,7 @@ def create_line(df, columns):
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_traces(line_width = 3)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
-                      height = 450,
+                      height = 400,
                       plot_bgcolor = 'white',
                       legend = dict(orientation = 'h', title = ''),
                       margin=dict(l=22, r=1, t=18, b=1, pad=1))
@@ -41,7 +41,7 @@ def create_bar(df, columns):
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
-                      height = 450, 
+                      height = 400, 
                       plot_bgcolor = 'white',
                       margin=dict(l=26, r=1, t=18, b=1, pad=1))
     fig.update_yaxes(automargin = False)
@@ -59,7 +59,7 @@ def create_choropleth(df, columns):
                         projection = 'mercator',
                         fitbounds = 'locations',
                         basemap_visible = False,
-                        height = 550,
+                        height = 500,
                         custom_data = ['region_name', 'values'])
 
     hovertemplate = '%{customdata[0]}<br>%{customdata[1]:,.2f}'
@@ -93,7 +93,7 @@ def lin_reg_plot(df, x, y, model):
         trendline_options=None
 
     fig = px.scatter(df, x = x, y = y, trendline = model,
-                    height = 450, trendline_options = trendline_options,
+                    height = 400, trendline_options = trendline_options,
                     hover_data= ['region_name'], 
                     trendline_color_override = px.colors.qualitative.D3[3],
                     color_discrete_sequence=px.colors.qualitative.D3)
@@ -111,7 +111,7 @@ def pca_plot(df):
     fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
                     color_discrete_sequence=px.colors.qualitative.D3,
                     title = '',
-                    height = 450, size = 'GDP per Capita',
+                    height = 400, size = 'GDP per Capita',
                     hover_data = ['region_name', 'Country'])
 
     fig.update_layout(  margin=dict(l=1, r=1, t=15, b=1, pad=1),
@@ -131,7 +131,7 @@ def box_plot(df, variable):
             color_discrete_sequence=px.colors.qualitative.D3,
             hover_data = ['region_name'],
             notched = True, title = '',
-            color = 'EU Region', height = 450)
+            color = 'EU Region', height = 400)
 
     fig.update_layout(margin=dict(l=1, r=1, t=23, b=1, pad=1),
                     plot_bgcolor = 'white',
