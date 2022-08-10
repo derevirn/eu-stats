@@ -6,7 +6,7 @@ by selecting a country and indicator below. Furthermore, you can visit the
 including linear regression modeling and principal component analysis.
 The dashboard was developed by [Giannis Tolios](https://giannis.io),
 using Python and various open source libraries, with the code being freely available
-at [Github](https://github.com/derevirn/stats-greece).
+at [Github](https://github.com/derevirn/eu-stats).
 If you have any feedback and suggestions, feel free to [send an email](mailto:info@statseuropa.com).  
 
 -----
