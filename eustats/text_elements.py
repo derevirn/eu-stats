@@ -7,7 +7,7 @@ including linear regression modeling and principal component analysis.
 The dashboard was developed by [Giannis Tolios](https://giannis.io),
 using Python and various open source libraries, with the code being freely available
 at [Github](https://github.com/derevirn/stats-greece).
-If you have any feedback and suggestions, feel free to [send an email](mailto:info@giannis.io).  
+If you have any feedback and suggestions, feel free to [send an email](mailto:info@statseuropa.com).  
 
 -----
 """
@@ -16,8 +16,8 @@ desc_analysis = """
 This page provides statistical analysis for administrative regions of
 EU countries ([NUTS 2](https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics) level).
 The **Descriptive Statistics** tab contains the dataset, as well as summary statistics and visualizations. 
-Furthermore, the **Regression Modeling** tab lets you create a linear regression or LOWESS model, by choosing the
-independent & dependent variable of your preference.
+Furthermore, the **Regression Modeling** tab lets you create a linear regression or LOWESS model,
+by choosing the variables of your preference.
 Finally, the **Principal Component Analysis** tab contains a plot that was created after applying dimensionality
 reduction on the dataset, with the bubble size representing GDP per capita.
 You can click <a href ="/Indicators" target = "_self">Here</a> to go back to the Indicators page.
