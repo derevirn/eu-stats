@@ -1,1 +1,1 @@
-sudo streamlit run Indicators.py --server.port 80  --browser.serverAddress='www.statseuropa.com' --client.showErrorDetails=false --browser.gatherUsageStats=false
+sudo streamlit run Indicators.py --server.port 80  --browser.serverAddress='www.statseuropa.com' --client.showErrorDetails=false --browser.gatherUsageStats=false --theme.primaryColor="#1F77B4"

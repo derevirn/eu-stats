@@ -59,7 +59,7 @@ def create_choropleth(df, columns):
                         projection = 'mercator',
                         fitbounds = 'locations',
                         basemap_visible = False,
-                        height = 600,
+                        height = 550,
                         custom_data = ['region_name', 'values'])
 
     hovertemplate = '%{customdata[0]}<br>%{customdata[1]:,.2f}'

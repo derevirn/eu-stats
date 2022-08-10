@@ -4,22 +4,8 @@ from eustats import *
 
 st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 
-desc = """ 
-This dashboard provides statistical indicators and analysis for European Union countries, 
-based on data from reliable sources. You can easily view the graph of your preference, 
-by selecting a country and indicator below. Furthermore, you can visit the
-<a href ="/Analysis" target = "_self">Analysis</a> page for advanced statistics,
-including linear regression modeling, hypothesis testing and principal component analysis.
-The dashboard was developed by [Giannis Tolios](https://giannis.io),
-using Python and various open source libraries, with the code being freely available
-at [Github](https://github.com/derevirn/stats-greece).
-If you have any feedback and suggestions, feel free to [send an email](mailto:info@giannis.io).  
-
------
-"""
-
 st.title('StatsEuropa 📈')
-st.markdown(desc, unsafe_allow_html = True)
+st.markdown(desc_indicators, unsafe_allow_html = True)
 
 plot_container = st.container()
 

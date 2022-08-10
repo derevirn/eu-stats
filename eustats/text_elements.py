@@ -1,3 +1,30 @@
+desc_indicators = """ 
+This dashboard provides statistical indicators and analysis for European Union countries, 
+based on data from reliable sources. You can easily view the graph of your preference
+by selecting a country and indicator below. Furthermore, you can visit the
+<a href ="/Analysis" target = "_self">Analysis</a> page for advanced statistics,
+including linear regression modeling and principal component analysis.
+The dashboard was developed by [Giannis Tolios](https://giannis.io),
+using Python and various open source libraries, with the code being freely available
+at [Github](https://github.com/derevirn/stats-greece).
+If you have any feedback and suggestions, feel free to [send an email](mailto:info@giannis.io).  
+
+-----
+"""
+
+desc_analysis = """ 
+This page provides statistical analysis for administrative regions of
+EU countries ([NUTS 2](https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics) level).
+The **Descriptive Statistics** tab contains the dataset, as well as summary statistics and visualizations. 
+Furthermore, the **Regression Modeling** tab lets you create a linear regression or LOWESS model, by choosing the
+independent & dependent variable of your preference.
+Finally, the **Principal Component Analysis** tab contains a plot that was created after applying dimensionality
+reduction on the dataset, with the bubble size representing GDP per capita.
+You can click <a href ="/Indicators" target = "_self">Here</a> to go back to the Indicators page.
+
+-----
+"""
+
 terms = ''' &nbsp; 
 
 -------------------

@@ -12,15 +12,8 @@ plt.style.use('seaborn-whitegrid')
 mpl.rcParams['figure.dpi'] = 300
 st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 
-desc = """ 
-This page provides statistical analysis for NUTS 2 regions of the European Union. 
-You can also visit the <a href ="/Indicators" target = "_self">Indicators</a> page.
-
------
-"""
-
 st.title('StatsEuropa 📈')
-st.markdown(desc, unsafe_allow_html= True)
+st.markdown(desc_analysis, unsafe_allow_html= True)
 
 df = pd.read_csv('data/eu_regional_data.csv')
 df_pca = pd.read_csv('data/eu_regional_data_pca.csv')
@@ -37,7 +30,7 @@ with tab1:
     with st.expander("Display NUTS 2 Region Tabular Dataset"):
         #df.set_index('region_name', inplace = True)
         st.dataframe(df.style.format(precision = 2))
-
+        st.write("This custom dataset was created by accessing the Eurostat API.")
         st.download_button("Download Dataset (CSV)",
         df.to_csv(index = False, float_format = "%.2f").encode('utf-8'),
         "nuts2_dataset.csv", "text/csv", key='download-csv') 
