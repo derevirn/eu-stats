@@ -1,6 +1,5 @@
-streamlit==1.11.0
+streamlit==1.11.1
 pandas==1.3.3
 eurostatapiclient==0.2.7
 plotly==5.7.0
-pingouin
 
