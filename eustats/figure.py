@@ -51,8 +51,7 @@ def create_bar(df, columns):
 
 def create_choropleth(df, columns):
 
-    latest = str(df.index.year[-1])
-    fig = px.choropleth(df.loc[latest], geojson = get_geojson(),
+    fig = px.choropleth(df, geojson = get_geojson(),
                         locations = 'geo', color = columns,
                         featureidkey = 'properties.id',
                         color_continuous_scale="Viridis_r",
