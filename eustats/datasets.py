@@ -29,9 +29,7 @@ def get_gdp_region(country):
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['values'] = df['values'] / 1000
-    df['time'] = pd.to_datetime(df['time'])
-    df['year'] = df['time'].dt.year
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+    df['time'] = pd.to_datetime(df['time']) 
 
     return df
 
@@ -53,8 +51,6 @@ def get_gdp_capita_region(country):
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['time'] = pd.to_datetime(df['time'])
-    df['year'] = df['time'].dt.year
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -100,8 +96,6 @@ def get_unemployment_region(country):
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['time'] = pd.to_datetime(df['time'])
-    df['year'] = df['time'].dt.year
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -171,8 +165,6 @@ def get_population_region(country):
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['time'] = pd.to_datetime(df['time'])
-    df['year'] = df['time'].dt.year
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -194,8 +186,6 @@ def get_poverty_risk_region(country):
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     df['time'] = pd.to_datetime(df['time'])
-    df['year'] = df['time'].dt.year
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -230,9 +220,7 @@ def get_life_expectancy_region(country):
     params = {'sex': 'T', 'geo': codes[country], 'lastTimePeriod': 1}
     df = client.get_dataset('tgs00101', params).to_dataframe()
     df.dropna(inplace = True)
-    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
-    df['time'] = pd.to_datetime(df['time'])
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x]) 
 
     return df
 
@@ -255,8 +243,6 @@ def get_doctors_region(country):
     df = client.get_dataset('hlth_rs_prsrg', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
-    df['time'] = pd.to_datetime(df['time'])
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
@@ -289,9 +275,7 @@ def get_hospital_beds_region(country):
               'facility': 'HBEDT', 'lastTimePeriod': 1}
     df = client.get_dataset('hlth_rs_bdsrg', params).to_dataframe()
     df.dropna(inplace = True)
-    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
-    df['time'] = pd.to_datetime(df['time'])
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x]) 
 
     return df
 
@@ -319,8 +303,6 @@ def get_tertiary_attainment_region(country):
     df = client.get_dataset('edat_lfse_04', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
-    df['time'] = pd.to_datetime(df['time'])
-    df.set_index(pd.DatetimeIndex(df['time']), inplace=True)  
 
     return df
 
