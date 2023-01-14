@@ -4,7 +4,7 @@ from eurostatapiclient import EurostatAPIClient
 from .nuts2 import *
 
 SEC_IN_DAY = 86400
-client = EurostatAPIClient('v2.2', 'json', 'en')
+client = EurostatAPIClient('1.0', 'json', 'en')
 
 ###############################################################################
 
