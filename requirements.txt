@@ -1,5 +1,5 @@
 streamlit==1.11.1
 pandas==1.3.3
-git+https://github.com/opus-42/eurostat-api-client
+git+https://github.com/opus-42/eurostat-api-client@b0bc5b3
 plotly==5.7.0
 
