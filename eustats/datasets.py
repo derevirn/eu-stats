@@ -410,7 +410,7 @@ def get_plastic_waste(country):
 
 @st.cache(ttl = SEC_IN_DAY)
 def get_new_cases(country):
-    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/new_cases.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/new_cases.csv')
     df['date'] = pd.to_datetime(df['date'])
     cols = ['date', country]
     df = df[cols]
@@ -421,7 +421,7 @@ def get_new_cases(country):
 
 @st.cache(ttl = SEC_IN_DAY)
 def get_new_deaths(country):
-    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/new_deaths.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/new_deaths.csv')
     df['date'] = pd.to_datetime(df['date'])
     cols = ['date', country]
     df = df[cols]
@@ -432,7 +432,7 @@ def get_new_deaths(country):
 
 @st.cache(ttl = SEC_IN_DAY)
 def get_total_cases(country):
-    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/total_cases.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/total_cases.csv')
     df['date'] = pd.to_datetime(df['date'])
     cols = ['date', country]
     df = df[cols]
@@ -443,7 +443,7 @@ def get_total_cases(country):
 
 @st.cache(ttl = SEC_IN_DAY)
 def get_total_deaths(country):
-    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/total_deaths.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/total_deaths.csv')
     df['date'] = pd.to_datetime(df['date'])
     cols = ['date', country]
     df = df[cols]
