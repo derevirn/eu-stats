@@ -10,7 +10,7 @@ client = EurostatAPIClient('1.0', 'json', 'en')
 
 #Economy
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'CP_MEUR', 'na_item': 'B1GQ'}
@@ -21,7 +21,7 @@ def get_gdp(country):
     
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_region(country):
     country = countries[country]
     params = {'unit': 'MIO_EUR', 'geo': codes[country], 'lastTimePeriod': 1}
@@ -33,7 +33,7 @@ def get_gdp_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_capita(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'CLV10_EUR_HAB', 'na_item': 'B1GQ'}
@@ -43,7 +43,7 @@ def get_gdp_capita(country):
     
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_capita_region(country):
     country = countries[country]
     params = {'unit': 'EUR_HAB', 'geo': codes[country], 'lastTimePeriod': 1}
@@ -54,7 +54,7 @@ def get_gdp_capita_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_govt_debt(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'PC_GDP',
@@ -65,7 +65,7 @@ def get_govt_debt(country):
     
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_govt_budget(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'PC_GDP',
@@ -77,7 +77,7 @@ def get_govt_budget(country):
     return df
 
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_unemployment(country):
     country = countries[country]
     params = {'geo': country, 's_adj': 'SA', 'indic': 'LM-UN-T-TOT'}
@@ -87,7 +87,7 @@ def get_unemployment(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_unemployment_region(country):
     country = countries[country]
     params = {'sex': 'T', 'geo': codes[country], 'age': 'Y15-74',
@@ -99,7 +99,7 @@ def get_unemployment_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_min_wage(country):
     country = countries[country]
     params = {'geo': country, 'currency': 'EUR'}
@@ -112,7 +112,7 @@ def get_min_wage(country):
     return df
 
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_inflation(country):
 
     country = countries[country]
@@ -125,7 +125,7 @@ def get_inflation(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gini(country):
     country = countries[country]
     params = {'geo': country}
@@ -140,7 +140,7 @@ def get_gini(country):
 
 #Society 
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_population(country):
     country = countries[country]
     params = {'geo': country, 'indic_de': ['JAN', 'MJAN', 'FJAN']}
@@ -156,7 +156,7 @@ def get_population(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_population_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'sex': 'T',
@@ -168,7 +168,7 @@ def get_population_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_poverty_risk(country):
     country = countries[country]
     params = {'geo': country, 'age': 'TOTAL', 'unit': 'PC'}
@@ -178,7 +178,7 @@ def get_poverty_risk(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_poverty_risk_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'lastTimePeriod': 1}
@@ -190,7 +190,7 @@ def get_poverty_risk_region(country):
     return df
 
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gender_pay_gap(country):
     country = countries[country]
     params = {'geo': country}
@@ -204,7 +204,7 @@ def get_gender_pay_gap(country):
 
 #Health
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_life_expectancy(country):
     country = countries[country]
     params = {'geo': country, 'sex': 'T', 'age': 'Y_LT1' }
@@ -214,7 +214,7 @@ def get_life_expectancy(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_life_expectancy_region(country):
     country = countries[country]
     params = {'sex': 'T', 'geo': codes[country], 'lastTimePeriod': 1}
@@ -224,7 +224,7 @@ def get_life_expectancy_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_doctors(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'P_HTHAB',
@@ -235,7 +235,7 @@ def get_doctors(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_doctors_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'unit': 'P_HTHAB',
@@ -246,7 +246,7 @@ def get_doctors_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_healthcare_expenditure(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'PC_GDP', 'icha11_hc': 'TOT_HC'}
@@ -257,7 +257,7 @@ def get_healthcare_expenditure(country):
     return df
 
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_hospital_beds(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'P_HTHAB',
@@ -268,7 +268,7 @@ def get_hospital_beds(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_hospital_beds_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'unit': 'P_HTHAB',
@@ -283,7 +283,7 @@ def get_hospital_beds_region(country):
 
 #Education
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_tertiary_attainment(country):
     country = countries[country]
     params = {'geo': country, 'sex': 'T', 'unit': 'PC',
@@ -295,7 +295,7 @@ def get_tertiary_attainment(country):
     return df
 
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_tertiary_attainment_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'sex': 'T', 'unit': 'PC',
@@ -306,7 +306,7 @@ def get_tertiary_attainment_region(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_early_leavers(country):
     country = countries[country]
     params = {'geo': country, 'sex': 'T', 'unit': 'PC',
@@ -317,7 +317,7 @@ def get_early_leavers(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_employment_graduates(country):
     country = countries[country]
     params = {'geo': country, 'sex': 'T', 'unit': 'PC',
@@ -333,7 +333,7 @@ def get_employment_graduates(country):
 
 #Environment
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_ghg_emissions(country):
     country = countries[country]
     params = {'geo': country, 'src_crf': 'TOTX4_MEMONIA',
@@ -344,7 +344,7 @@ def get_ghg_emissions(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_renewable_pct(country):
     country = countries[country]
     params = {'geo': country, 'nrg_bal': 'REN'}
@@ -354,7 +354,7 @@ def get_renewable_pct(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_energy_cons(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'KGOE_HAB',
@@ -372,7 +372,7 @@ def get_energy_cons(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_energy_imports(country):
     country = countries[country]
     params = {'geo': country, 'siec': 'TOTAL'}
@@ -382,7 +382,7 @@ def get_energy_imports(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_recycling_rate(country):
     country = countries[country]
     params = {'geo': country}
@@ -392,7 +392,7 @@ def get_recycling_rate(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_plastic_waste(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'KG_HAB'}
@@ -408,7 +408,7 @@ def get_plastic_waste(country):
 
 #COVID-19
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_new_cases(country):
     df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/new_cases.csv')
     df['date'] = pd.to_datetime(df['date'])
@@ -419,7 +419,7 @@ def get_new_cases(country):
 
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_new_deaths(country):
     df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/new_deaths.csv')
     df['date'] = pd.to_datetime(df['date'])
@@ -430,7 +430,7 @@ def get_new_deaths(country):
     
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_total_cases(country):
     df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/total_cases.csv')
     df['date'] = pd.to_datetime(df['date'])
@@ -441,7 +441,7 @@ def get_total_cases(country):
     
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_total_deaths(country):
     df = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/total_deaths.csv')
     df['date'] = pd.to_datetime(df['date'])
@@ -452,7 +452,7 @@ def get_total_deaths(country):
     
     return df
 
-@st.cache(ttl = SEC_IN_DAY)
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_vaccinations(country):
     rename_dict = {'date': 'time',
                    'total_vaccinations': 'Total Vaccinations',

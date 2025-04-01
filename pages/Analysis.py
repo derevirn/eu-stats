@@ -8,7 +8,7 @@ import matplotlib as mpl
 import plotly.express as px
 from statsmodels.stats.descriptivestats import describe
 
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-v0_8-whitegrid')
 mpl.rcParams['figure.dpi'] = 300
 st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 
