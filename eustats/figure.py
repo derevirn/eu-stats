@@ -159,7 +159,7 @@ def correlation_heatmap(df):
 
     fig, ax = plt.subplots(figsize = (10,8))
 
-    sns.heatmap(df.corr().round(decimals=2),
+    sns.heatmap(df.corr(numeric_only = True).round(decimals=2),
     annot=True, ax = ax)
 
     return fig
