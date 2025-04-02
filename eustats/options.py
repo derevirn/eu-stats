@@ -165,43 +165,6 @@ option_dict = {
 
     },
 
-    'National Availability of Doctors (Per 100000 Inhabitants)': {
-        'df_func': get_doctors,
-        'category': 'Health',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },  
-
-    'Regional Availability of Doctors (Per 100000 Inhabitants)': {
-        'df_func': get_doctors_region,
-        'category': 'Health',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },  
-
-
-    'National Availability of Hospital Beds (Per 100000 Inhabitants)': {
-        'df_func': get_hospital_beds,
-        'category': 'Health',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },  
-
-    'Regional Availability of Hospital Beds (Per 100000 Inhabitants)': {
-        'df_func': get_hospital_beds_region,
-        'category': 'Health',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },  
-
     'Healthcare Expenditure (Percentage of GDP %)': {
         'df_func': get_healthcare_expenditure,
         'category': 'Health',
@@ -210,6 +173,60 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
+
+    'Heart Disease Deaths (per 100K Inhabitants)': {
+        'df_func': get_heart_deaths,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Cancer Deaths (per 100K inhabitants)': {
+        'df_func': get_cancer_deaths,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'National Availability of Doctors (per 100K Inhabitants)': {
+        'df_func': get_doctors,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'Regional Availability of Doctors (per 100K Inhabitants)': {
+        'df_func': get_doctors_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'National Availability of Hospital Beds (per 100K Inhabitants)': {
+        'df_func': get_hospital_beds,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'Regional Availability of Hospital Beds (per 100K Inhabitants)': {
+        'df_func': get_hospital_beds_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
 
 
     #Education
