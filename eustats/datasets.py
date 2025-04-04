@@ -128,7 +128,7 @@ def get_inflation(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_gini(country):
     country = countries[country]
-    params = {'geo': country}
+    params = {'geo': country, 'age': 'TOTAL'}
     df = client.get_dataset('ilc_di12', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
