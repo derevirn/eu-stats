@@ -292,6 +292,16 @@ def get_heart_deaths(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_cancer_deaths(country):
     country = countries[country]
+    params = {'geo': country, 'sex': 'T'}
+    df = client.get_dataset('tps00116', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+    
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_cancer_deaths_region(country):
+    country = countries[country]
     params = {'geo': codes[country], 'lastTimePeriod': 1}
     df = client.get_dataset('tgs00058', params).to_dataframe()
     df.dropna(inplace = True)

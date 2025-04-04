@@ -183,8 +183,17 @@ option_dict = {
 
     },
 
-    'Cancer Deaths (per 100K inhabitants)': {
+    'National Cancer Deaths (per 100K inhabitants)': {
         'df_func': get_cancer_deaths,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional Cancer Deaths (per 100K inhabitants)': {
+        'df_func': get_cancer_deaths_region,
         'category': 'Health',
         'plot_type': 'choropleth',
         'columns': 'values',
