@@ -174,7 +174,7 @@ option_dict = {
 
     },
 
-    'Heart Disease Deaths (per 100K Inhabitants)': {
+    'Regional Ischemic Heart Disease Deaths (per 100K Inhabitants)': {
         'df_func': get_heart_deaths,
         'category': 'Health',
         'plot_type': 'choropleth',
