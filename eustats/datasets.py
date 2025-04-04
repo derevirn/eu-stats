@@ -271,8 +271,8 @@ def get_hospital_beds(country):
 def get_hospital_beds_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'unit': 'P_HTHAB',
-              'facility': 'HBEDT', 'lastTimePeriod': 1}
-    df = client.get_dataset('hlth_rs_bdsrg', params).to_dataframe()
+             'lastTimePeriod': 1}
+    df = client.get_dataset('hlth_rs_bdsrg2', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x]) 
 
