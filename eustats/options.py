@@ -201,7 +201,7 @@ option_dict = {
 
     },
 
-    'National Availability of Doctors (per 100K Inhabitants)': {
+    'National Availability of Doctors': {
         'df_func': get_doctors,
         'category': 'Health',
         'plot_type': 'line',
@@ -210,7 +210,7 @@ option_dict = {
 
     },  
 
-    'Regional Availability of Doctors (per 100K Inhabitants)': {
+    'Regional Availability of Doctors': {
         'df_func': get_doctors_region,
         'category': 'Health',
         'plot_type': 'choropleth',

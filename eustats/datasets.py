@@ -227,9 +227,9 @@ def get_life_expectancy_region(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_doctors(country):
     country = countries[country]
-    params = {'geo': country, 'unit': 'P_HTHAB',
-              'wstatus': 'PRACT', 'isco08': 'OC221' }
-    df = client.get_dataset('hlth_rs_prs1', params).to_dataframe()
+    params = {'geo': country, 'unit': 'NR',
+              'age': 'TOTAL', 'sex': 'T' }
+    df = client.get_dataset('hlth_rs_phys', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
 
@@ -238,9 +238,8 @@ def get_doctors(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_doctors_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'unit': 'P_HTHAB',
-              'isco08': 'OC221', 'lastTimePeriod': 1}
-    df = client.get_dataset('hlth_rs_prsrg', params).to_dataframe()
+    params = {'geo': codes[country], 'unit': 'NR', 'lastTimePeriod': 1}
+    df = client.get_dataset('hlth_rs_physreg', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
 
