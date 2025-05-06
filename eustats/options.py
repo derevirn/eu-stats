@@ -174,14 +174,14 @@ option_dict = {
 
     },
 
-    'Regional Ischemic Heart Disease Deaths (per 100K Inhabitants)': {
-        'df_func': get_heart_deaths,
-        'category': 'Health',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    # 'Regional Ischemic Heart Disease Deaths (per 100K Inhabitants)': {
+    #     'df_func': get_heart_deaths,
+    #     'category': 'Health',
+    #     'plot_type': 'choropleth',
+    #     'columns': 'values',
+    #     'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
-    },
+    # },
 
     'National Cancer Deaths (per 100K inhabitants)': {
         'df_func': get_cancer_deaths,
