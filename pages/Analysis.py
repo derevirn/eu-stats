@@ -15,12 +15,14 @@ st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 st.title('StatsEuropa 📈')
 st.markdown(desc_analysis, unsafe_allow_html= True)
 
-df = pd.read_csv('data/eu_regional_data.csv')
+df = pd.read_csv('data/eu_regional_data.csv').sort_values('region_name')
 df_pca = pd.read_csv('data/eu_regional_data_pca.csv')
+df_tsne = pd.read_csv('data/eu_regional_data_tsne.csv')
+df_umap = pd.read_csv('data/eu_regional_data_umap.csv')
 num_cols = list(df.columns[3:])
 
 tab_str = ['Descriptive Statistics', 'Regression Modeling',
-           'Principal Component Analysis']
+           'Dimensionality Reduction Plots']
 tab1, tab2, tab3 = st.tabs(tab_str)
 
 with tab1:
@@ -33,7 +35,7 @@ with tab1:
         st.write("This custom dataset was created by accessing the Eurostat API.")
         st.download_button("Download Dataset (CSV)",
         df.to_csv(index = False, float_format = "%.2f").encode('utf-8'),
-        "nuts2_dataset.csv", "text/csv", key='download-csv') 
+        "EU_NUTS2_dataset_2022.csv", "text/csv", key='download-csv') 
 
     with st.expander("Basic Summary Statistics for NUTS 2 Region Data"):
         df_desc = describe(df, percentiles = [25, 75])
@@ -85,10 +87,21 @@ with tab2:
 
 with tab3:
 
-    st.markdown('##### Principal Component Analysis (PCA) Plot for NUTS 2 Region Data')
+    st.markdown('#### Dimensionality Reduction Plots for NUTS2 Region Data')
 
-    fig3 = pca_plot(df_pca)
-    st.plotly_chart(fig3, use_container_width = True)
+    dim_container = st.container()
+    dim_method = st.selectbox('Select Dimensionality Reduction Method: ', options = ['PCA', 't-SNE', 'UMAP'])
+
+    with dim_container:
+
+        if dim_method == 'PCA':
+            fig3 = dimensionality_plot(df_pca)
+        elif dim_method == 't-SNE':
+            fig3 = dimensionality_plot(df_tsne)
+        elif dim_method == 'UMAP':
+            fig3 = dimensionality_plot(df_umap)
+
+        st.plotly_chart(fig3, use_container_width = True)
 
 st.markdown(terms)
 st.markdown(footer, unsafe_allow_html= True)

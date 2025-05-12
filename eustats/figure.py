@@ -100,27 +100,29 @@ def lin_reg_plot(df, x, y, model):
     fig.update_layout(plot_bgcolor = 'white',
                     legend = dict(orientation = 'h', title = ''),
                     margin=dict(l=1, r=1, t=18, b=1, pad=1))
+    fig.update_yaxes(showgrid=False, zeroline = False)
 
     return fig
 
-def pca_plot(df):
+def dimensionality_plot(df):
 
-    df['pc_1'] = df['pc_1'] / 1000
-    df['pc_2'] = df['pc_2'] / 1000
+    df['pc_1'] = df['pc_1'] 
+    df['pc_2'] = df['pc_2'] 
     fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
                     color_discrete_sequence=px.colors.qualitative.D3,
                     title = '',
-                    height = 400, size = 'GDP per Capita',
-                    hover_data = ['region_name', 'Country'])
+                    height = 480, size = 'GDP per Capita', size_max = 17,
+                    custom_data = ['region_name', 'Country'])
 
     fig.update_layout(  margin=dict(l=1, r=1, t=15, b=1, pad=1),
                         plot_bgcolor = 'white',
                         legend = dict(orientation = 'h', title = ''),
-                        yaxis_title='Principal Component 2',
-                        xaxis_title='Principal Component 1')
+                        yaxis_title='Component 2',
+                        xaxis_title='Component 1')
 
-    hovertemplate = '%{customdata[1]} - %{customdata[0]}' 
+    hovertemplate = '%{customdata[1]} - %{customdata[0]} <extra></extra>' 
     fig.update_traces(hovertemplate=hovertemplate)
+    fig.update_yaxes(showgrid=False, zeroline = False)
 
     return fig
 
@@ -136,6 +138,8 @@ def box_plot(df, variable):
                     plot_bgcolor = 'white',
                     showlegend = False,
                     yaxis_title='', xaxis_title='')
+    fig.update_yaxes(showgrid=False, zeroline = False)
+    
     return fig
 
 def kde_plot(df, variable):
