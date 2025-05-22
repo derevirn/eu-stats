@@ -366,7 +366,7 @@ def get_employment_graduates(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_ghg_emissions(country):
     country = countries[country]
-    params = {'geo': country, 'src_crf': 'TOTX4_MEMONIA',
+    params = {'geo': country, 'src_crf': 'TOTXMEMO',
               'unit': 'T_HAB'}
     df = client.get_dataset('sdg_13_10', params).to_dataframe()
     df.dropna(inplace = True)
