@@ -17,7 +17,7 @@ def get_geojson():
 def create_line(df, columns):
 
     fig = px.line(data_frame = df, x = 'time',  y = columns,
-                  line_shape = 'linear',
+                  line_shape = 'linear', color = 'geo',
                   render_mode = 'svg',
                   color_discrete_sequence=px.colors.qualitative.D3)
 
@@ -36,6 +36,7 @@ def create_line(df, columns):
 def create_bar(df, columns):
 
     fig = px.bar(data_frame = df[-60:], x = 'time',  y = columns,
+                 color='geo', barmode = 'group',
                  color_discrete_sequence=px.colors.qualitative.D3)   
 
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
@@ -92,9 +93,10 @@ def lin_reg_plot(df, x, y, model):
         trendline_options=None
 
     fig = px.scatter(df, x = x, y = y, trendline = model,
-                    height = 400, trendline_options = trendline_options,
+                    height = 500, trendline_options = trendline_options,
                     hover_data= ['region_name'], 
-                    trendline_color_override = px.colors.qualitative.D3[3],
+                    color='EU Region',
+                    #trendline_color_override = px.colors.qualitative.D3[3],
                     color_discrete_sequence=px.colors.qualitative.D3)
 
     fig.update_layout(plot_bgcolor = 'white',

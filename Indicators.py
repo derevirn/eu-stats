@@ -9,16 +9,40 @@ st.markdown(desc_indicators, unsafe_allow_html = True)
 
 plot_container = st.container()
 
+level_help = "Show available indicators on aggregated national level (EU country), \
+              or regional based on NUTS2 "
+
+options = ["National", "Regional"]
+geo_level_radio = st.radio("Geographical Level", options,
+                     index = 0, horizontal=True, help = level_help)
+geo_level = options.index(geo_level_radio)
+
+
 col1, col2 = st.columns(2)
-country = col1.selectbox("Select a Country", countries.keys(), index = 9)
+
+if geo_level:
+    country = col1.selectbox("Select a Country", countries.keys(), index = 9)
+else:    
+    country = col1.multiselect("Select a Country", countries.keys(),
+                                default = 'Germany')    
+
 cat_list = ['Economy', 'Health', 'Education', 'Society', 'Environment', 'COVID-19']
 category = col2.selectbox('Select a Category', cat_list)
-indicator = st.selectbox('Select a Statistical Indicator', get_keys(option_dict, category))
+indicator = st.selectbox('Select a Statistical Indicator',
+            get_keys(option_regional if geo_level else option_national, category))
 
-df_func = option_dict[indicator]['df_func']
-df = df_func(country)
+df_func = option_regional[indicator]['df_func'] if geo_level else option_national[indicator]['df_func']
+
+if geo_level:
+    df = df_func(country)
+else:
+    df_list = [df_func(count) for count in country]
+    df = pd.concat(df_list, ignore_index=True)
+
+
 if df.shape[0] == 0:
     st.warning("No data available, please select another country or indicator", )
+    
  
 with st.expander("Display Tabular Dataset"):
     st.dataframe(df.style.format(precision = 2, thousands = ','))
@@ -27,14 +51,14 @@ with st.expander("Display Tabular Dataset"):
     df.to_csv(index = True, float_format = "%.2f").encode('utf-8'),
     "dataset.csv", "text/csv", key='download-csv') 
 
-figure = create_figure(df, option_dict[indicator])
+figure = create_figure(df, option_regional[indicator] if geo_level else option_national[indicator])
 
 with plot_container:
     st.write("##### {} - {}".format(country, indicator))
     st.plotly_chart(figure, use_container_width = True)
 
     source = '<div style="text-align: right; margin-top: -35px"> Source: {}</div>'
-    source = source.format(option_dict[indicator]['source'])
+    source = source.format('<a href="https://ec.europa.eu/eurostat">Eurostat</a>')
     st.markdown(source, unsafe_allow_html = True) 
 
 

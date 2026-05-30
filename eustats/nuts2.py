@@ -1,4 +1,6 @@
-countries = { "Austria": "AT",
+countries = { 
+ "European Union": "EU27_2020",   
+ "Austria": "AT",
  "Belgium": "BE", 
  "Bulgaria": "BG", 
  "Croatia": "HR", 

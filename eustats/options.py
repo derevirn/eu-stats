@@ -1,6 +1,6 @@
 from .datasets import *
 
-option_dict = {
+option_national = {
 
     #Economy
 
@@ -8,14 +8,6 @@ option_dict = {
         'df_func': get_gdp,
         'category': 'Economy',
         'plot_type': 'line', 
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-    },
-
-    'Regional GDP (Current Prices in Billions of Euro)': {
-        'df_func': get_gdp_region,
-        'category': 'Economy',
-        'plot_type': 'choropleth',
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
@@ -28,14 +20,6 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'Regional GDP per Capita (Euros per Inhabitant)': {
-        'df_func': get_gdp_capita_region,
-        'category': 'Economy',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-    },
-
     'National Unemployment (Percentage of the Population %)': {
         'df_func': get_unemployment,
         'category': 'Economy',
@@ -43,14 +27,6 @@ option_dict = {
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
-    },
-
-    'Regional Unemployment (Percentage of the Population %)': {
-        'df_func': get_unemployment_region,
-        'category': 'Economy',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
      'Minimum Wage (Euros per Month) ': {
@@ -109,15 +85,6 @@ option_dict = {
 
     },
 
-     'Regional Population (Absolute Number)': {
-        'df_func': get_population_region,
-        'category': 'Society',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
     'Gender Pay Gap (Percentage of hourly earnings of men %)': {
         'df_func': get_gender_pay_gap,
         'category': 'Society',
@@ -136,15 +103,6 @@ option_dict = {
 
     },
 
-    'Regional Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
-        'df_func': get_poverty_risk_region,
-        'category': 'Society',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
     #Health
 
     'National Life Expectancy at Birth (Years)': {
@@ -155,15 +113,6 @@ option_dict = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },    
-
-    'Regional Life Expectancy at Birth (Years)': {
-        'df_func': get_life_expectancy_region,
-        'category': 'Health',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
 
     'Healthcare Expenditure (Percentage of GDP %)': {
         'df_func': get_healthcare_expenditure,
@@ -192,15 +141,6 @@ option_dict = {
 
     },
 
-    'Regional Cancer Deaths (per 100K inhabitants)': {
-        'df_func': get_cancer_deaths_region,
-        'category': 'Health',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
     'National Availability of Doctors': {
         'df_func': get_doctors,
         'category': 'Health',
@@ -210,28 +150,11 @@ option_dict = {
 
     },  
 
-    'Regional Availability of Doctors': {
-        'df_func': get_doctors_region,
-        'category': 'Health',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },  
 
     'National Availability of Hospital Beds (per 100K Inhabitants)': {
         'df_func': get_hospital_beds,
         'category': 'Health',
         'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },  
-
-    'Regional Availability of Hospital Beds (per 100K Inhabitants)': {
-        'df_func': get_hospital_beds_region,
-        'category': 'Health',
-        'plot_type': 'choropleth',
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
@@ -244,15 +167,6 @@ option_dict = {
         'df_func': get_tertiary_attainment,
         'category': 'Education',
         'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
-    'Regional Tertiary Educational Attainment at Ages 25-64 (Population %)': {
-        'df_func': get_tertiary_attainment_region,
-        'category': 'Education',
-        'plot_type': 'choropleth',
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
@@ -381,5 +295,99 @@ option_dict = {
         'source': '<a href="https://ourworldindata.org/">Our World in Data</a>'
 
     } 
+
+}
+
+option_regional = {
+
+    'Regional GDP (Current Prices in Billions of Euro)': {
+        'df_func': get_gdp_region,
+        'category': 'Economy',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    },
+
+    'Regional GDP per Capita (Euros per Inhabitant)': {
+        'df_func': get_gdp_capita_region,
+        'category': 'Economy',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    },
+
+    'Regional Unemployment (Percentage of the Population %)': {
+        'df_func': get_unemployment_region,
+        'category': 'Economy',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    },
+
+
+    'Regional Population (Absolute Number)': {
+        'df_func': get_population_region,
+        'category': 'Society',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
+        'df_func': get_poverty_risk_region,
+        'category': 'Society',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional Cancer Deaths (per 100K inhabitants)': {
+        'df_func': get_cancer_deaths_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional Availability of Doctors': {
+        'df_func': get_doctors_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+
+    'Regional Availability of Hospital Beds (per 100K Inhabitants)': {
+        'df_func': get_hospital_beds_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },  
+
+    'Regional Life Expectancy at Birth (Years)': {
+        'df_func': get_life_expectancy_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+
+    'Regional Tertiary Educational Attainment at Ages 25-64 (Population %)': {
+        'df_func': get_tertiary_attainment_region,
+        'category': 'Education',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },    
 
 }
