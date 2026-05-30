@@ -9,16 +9,13 @@ st.markdown(desc_indicators, unsafe_allow_html = True)
 
 plot_container = st.container()
 
-level_help = "Show available indicators on aggregated national level (EU country), \
-              or regional based on NUTS2 "
-options = ["National", "Regional"]
-geo_level_radio = st.radio("Geographical Level", options,
-                     index = 0, horizontal=True, help = level_help)
-geo_level = options.index(geo_level_radio)
+colA, colB = st.columns(2)
+level_help = "Show available indicators on aggregated national level (country) \
+              or regional level based on NUTS2"
+geo_level = colB.toggle("Toggle National/Regional Indicators", help = level_help)
 
 
 col1, col2 = st.columns(2)
-
 if geo_level:
     country = col1.selectbox("Select a Country", countries.keys(), index = 11)
 else:    
