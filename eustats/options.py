@@ -80,7 +80,7 @@ option_national = {
         'df_func': get_population,
         'category': 'Society',
         'plot_type': 'line',
-        'columns': ['Total Population', 'Male Population','Female Population'],
+        'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },

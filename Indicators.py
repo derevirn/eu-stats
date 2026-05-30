@@ -64,4 +64,4 @@ with plot_container:
 
 st.markdown(terms)
 st.markdown(footer, unsafe_allow_html= True)
-st.components.v1.html(tracking)
+st.iframe(tracking)

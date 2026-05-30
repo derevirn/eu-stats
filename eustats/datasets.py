@@ -143,16 +143,10 @@ def get_gini(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_population(country):
     country = countries[country]
-    params = {'geo': country, 'indic_de': ['JAN', 'MJAN', 'FJAN']}
+    params = {'geo': country, 'indic_de': 'JAN'}
     df = client.get_dataset('demo_gind', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
-    df = df.pivot(index = 'time', columns = 'indic_de', values = 'values').reset_index()
-
-    columns = {'JAN': 'Total Population',
-               'MJAN': 'Male Population',
-               'FJAN': 'Female Population'}
-    df.rename(columns = columns, inplace = True)
 
     return df
 
