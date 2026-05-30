@@ -11,7 +11,6 @@ plot_container = st.container()
 
 level_help = "Show available indicators on aggregated national level (EU country), \
               or regional based on NUTS2 "
-
 options = ["National", "Regional"]
 geo_level_radio = st.radio("Geographical Level", options,
                      index = 0, horizontal=True, help = level_help)
@@ -21,10 +20,10 @@ geo_level = options.index(geo_level_radio)
 col1, col2 = st.columns(2)
 
 if geo_level:
-    country = col1.selectbox("Select a Country", countries.keys(), index = 9)
+    country = col1.selectbox("Select a Country", countries.keys(), index = 11)
 else:    
-    country = col1.multiselect("Select a Country", countries.keys(),
-                                default = 'Germany')    
+    country = col1.multiselect("Select one or more Countries", countries.keys(),
+                                max_selections = 5, default = ['Germany', 'France'])    
 
 cat_list = ['Economy', 'Health', 'Education', 'Society', 'Environment', 'COVID-19']
 category = col2.selectbox('Select a Category', cat_list)
@@ -53,8 +52,9 @@ with st.expander("Display Tabular Dataset"):
 
 figure = create_figure(df, option_regional[indicator] if geo_level else option_national[indicator])
 
+country_str = country if isinstance(country, str) else ", ".join(country)
 with plot_container:
-    st.write("##### {} - {}".format(country, indicator))
+    st.write("##### {} - {}".format(country_str, indicator))
     st.plotly_chart(figure, use_container_width = True)
 
     source = '<div style="text-align: right; margin-top: -35px"> Source: {}</div>'

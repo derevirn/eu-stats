@@ -29,7 +29,7 @@ def create_line(df, columns):
                       plot_bgcolor = 'white',
                       legend = dict(orientation = 'h', title = ''),
                       margin=dict(l=22, r=1, t=18, b=1, pad=1))
-    fig.update_yaxes(automargin = False)
+    fig.update_yaxes(automargin = False, showgrid=False)
 
     return fig
 
@@ -45,7 +45,7 @@ def create_bar(df, columns):
                       height = 400, 
                       plot_bgcolor = 'white',
                       margin=dict(l=26, r=1, t=18, b=1, pad=1))
-    fig.update_yaxes(automargin = False)
+    fig.update_yaxes(automargin = False, showgrid=False)
 
     return fig
 
