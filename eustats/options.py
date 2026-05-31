@@ -20,6 +20,14 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
+     'National GDP per Capita (Purchasing Power Standards - EU = 100 )': {
+        'df_func': get_gdp_capita_pps,
+        'category': 'Economy',
+        'plot_type': 'line', 
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    },
+
     'National GDP Growth (Change Compared to Previous Year %)': {
         'df_func': get_gdp_growth,
         'category': 'Economy',

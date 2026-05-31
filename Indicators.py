@@ -20,7 +20,10 @@ if geo_level:
     country = col1.selectbox("Select a Country", countries.keys(), index = 11)
 else:    
     country = col1.multiselect("Select one or more Countries", countries.keys(),
-                                max_selections = 5, default = ['Germany', 'France'])    
+                                max_selections = 5, default = ['Germany', 'France'])   
+    if not country:
+        st.warning("⚠️ Please select at least one country.")
+        st.stop() 
 
 cat_list = ['Economy', 'Health', 'Education', 'Society', 'Environment', 'COVID-19']
 category = col2.selectbox('Select a Category', cat_list)
