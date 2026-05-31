@@ -93,7 +93,7 @@ def get_unemployment(country):
     params = {'geo': country, 's_adj': 'SA', 'indic': 'LM-UN-T-TOT'}
     df = client.get_dataset('ei_lmhr_m', params).to_dataframe()
     df.dropna(inplace = True)
-    df['time'] = pd.to_datetime(df['time'], format = '%YM%m')
+    df['time'] = pd.to_datetime(df['time'])
 
     return df
 

@@ -23,7 +23,7 @@ option_national = {
     'National GDP Growth (Percentage Change Compared to Previous Year %)': {
         'df_func': get_gdp_growth,
         'category': 'Economy',
-        'plot_type': 'line', 
+        'plot_type': 'bar', 
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
