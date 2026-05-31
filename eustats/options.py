@@ -4,7 +4,7 @@ option_national = {
 
     #Economy
 
-    'National GDP (Current Prices in Billions of Euro)': {
+    'National GDP (Current Prices in Billions of Euros)': {
         'df_func': get_gdp,
         'category': 'Economy',
         'plot_type': 'line', 
@@ -12,7 +12,7 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'National GDP per Capita (Euros per Inhabitant)': {
+    'National GDP per Capita (Adjusted for Inflation in Euros)': {
         'df_func': get_gdp_capita,
         'category': 'Economy',
         'plot_type': 'line', 
@@ -20,7 +20,7 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-    'National GDP Growth (Percentage Change Compared to Previous Year %)': {
+    'National GDP Growth (Change Compared to Previous Year %)': {
         'df_func': get_gdp_growth,
         'category': 'Economy',
         'plot_type': 'bar', 
@@ -46,7 +46,7 @@ option_national = {
 
     },
 
-    'Inflation Rate (Percentage Change Compared to Previous Year %)': {
+    'Inflation Rate (Change Compared to Previous Year %)': {
         'df_func': get_inflation,
         'category': 'Economy',
         'plot_type': 'bar',

@@ -36,7 +36,7 @@ def get_gdp_region(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_capita(country):
     country = countries[country]
-    params = {'geo': country, 'unit': 'CLV10_EUR_HAB', 'na_item': 'B1GQ'}
+    params = {'geo': country, 'unit': 'CLV20_EUR_HAB', 'na_item': 'B1GQ'}
     df = client.get_dataset('nama_10_pc', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
