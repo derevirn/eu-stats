@@ -44,6 +44,16 @@ def get_gdp_capita(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_gdp_growth(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'CLV_PCH_PRE'}
+    df = client.get_dataset('tec00115', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+    
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_capita_region(country):
     country = countries[country]
     params = {'unit': 'EUR_HAB', 'geo': codes[country], 'lastTimePeriod': 1}

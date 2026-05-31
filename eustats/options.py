@@ -12,8 +12,16 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-     'National GDP per Capita (Euros per Inhabitant)': {
+    'National GDP per Capita (Euros per Inhabitant)': {
         'df_func': get_gdp_capita,
+        'category': 'Economy',
+        'plot_type': 'line', 
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    },
+
+    'National GDP Growth (Percentage Change Compared to Previous Year %)': {
+        'df_func': get_gdp_growth,
         'category': 'Economy',
         'plot_type': 'line', 
         'columns': 'values',
