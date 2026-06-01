@@ -214,6 +214,16 @@ def get_poverty_risk(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_asylum_applicants(country):
+    country = countries[country]
+    params = {'geo': country, 'applicant': 'TOTAL' }
+    df = client.get_dataset('tps00191', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_poverty_risk_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'lastTimePeriod': 1}

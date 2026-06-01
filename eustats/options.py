@@ -128,6 +128,15 @@ option_national = {
 
     },
 
+    'Asylum Applicants (Absolute Number)': {
+        'df_func': get_asylum_applicants,
+        'category': 'Society',
+        'plot_type': 'bar',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
     #Health
 
     'National Life Expectancy at Birth (Years)': {
