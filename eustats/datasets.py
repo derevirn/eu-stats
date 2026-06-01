@@ -75,6 +75,17 @@ def get_gdp_capita_region(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_gdp_capita_pps_region(country):
+    country = countries[country]
+    params = {'unit': 'PPS_HAB_EU27_2020', 'geo': codes[country], 'lastTimePeriod': 1}
+    df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_govt_debt(country):
     country = countries[country]
     params = {'geo': country, 'unit': 'PC_GDP',

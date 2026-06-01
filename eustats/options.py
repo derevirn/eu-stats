@@ -332,6 +332,14 @@ option_regional = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
+    'Regional GDP per Capita (Purchasing Power Standards - EU = 100 )': {
+        'df_func': get_gdp_capita_pps_region,
+        'category': 'Economy',
+        'plot_type': 'choropleth', 
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+    },
+
     'Regional Unemployment (Percentage of the Population %)': {
         'df_func': get_unemployment_region,
         'category': 'Economy',
