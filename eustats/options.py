@@ -101,6 +101,15 @@ option_national = {
 
     },
 
+    'National Population Change (Rate per 1000 People)': {
+        'df_func': get_population_change,
+        'category': 'Society',
+        'plot_type': 'bar',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
     'Gender Pay Gap (Percentage of hourly earnings of men %)': {
         'df_func': get_gender_pay_gap,
         'category': 'Society',

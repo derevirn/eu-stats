@@ -182,6 +182,16 @@ def get_population(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_population_change(country):
+    country = countries[country]
+    params = {'geo': country, 'indic_de': 'GROWRT'}
+    df = client.get_dataset('tps00019', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_population_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'sex': 'T',
@@ -391,7 +401,7 @@ def get_employment_graduates(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_ghg_emissions(country):
     country = countries[country]
-    params = {'geo': country, 'src_crf': 'TOTXMEMO',
+    params = {'geo': country, 'src_crf': 'TOTX4_MEMO',
               'unit': 'T_HAB'}
     df = client.get_dataset('sdg_13_10', params).to_dataframe()
     df.dropna(inplace = True)
