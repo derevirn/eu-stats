@@ -260,6 +260,18 @@ def get_life_expectancy(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_healthy_years(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T' }
+    df = client.get_dataset('tps00150', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_life_expectancy_region(country):
     country = countries[country]
     params = {'sex': 'T', 'geo': codes[country], 'lastTimePeriod': 1}

@@ -175,6 +175,17 @@ option_national = {
 
     },    
 
+    'Healthy Life Years at Birth (Years)': {
+        'df_func': get_healthy_years,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },        
+
+
+
     'Healthcare Expenditure (Percentage of GDP %)': {
         'df_func': get_healthcare_expenditure,
         'category': 'Health',
