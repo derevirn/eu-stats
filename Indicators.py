@@ -62,6 +62,7 @@ with plot_container:
     st.markdown(source, unsafe_allow_html = True) 
 
 
+
 st.markdown(terms)
-st.markdown(footer, unsafe_allow_html= True)
-st.iframe(tracking)
+st.html(footer)
+st.html(tracking)

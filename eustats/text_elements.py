@@ -61,8 +61,10 @@ footer {visibility: hidden;}
 </style>
 
 <div class="footer_">
-  <p>Giannis Tolios 2022</p>
+  <p>Giannis Tolios 2026</p>
 </div>
+
+<style>[data-testid="stSidebar"] p {font-size: 18px !important;}</style>
 """
 
 tracking = '''<!-- Default Statcounter code for StatsEuropa https://eu-stats.herokuapp.com/ -->
