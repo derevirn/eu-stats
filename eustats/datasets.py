@@ -248,23 +248,24 @@ def get_gender_pay_gap(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_homicide_rate(country):
     country = countries[country]
-    params = {'geo': country, 'sex': 'T'}
-    df = client.get_dataset('tps00146', params).to_dataframe()
+    params = {'geo': country, 'iccs': 'ICCS0101',
+              'unit': 'P_HTHAB'}
+    df = client.get_dataset('crim_off_cat', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
 
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
-def get_suicide_rate(country):
+def get_femicide_rate(country):
     country = countries[country]
-    params = {'geo': country, 'sex': 'T'}
-    df = client.get_dataset('tps00122', params).to_dataframe()
+    params = {'geo': country, 'sex': 'F',
+              'pers_cat': 'IPTN_FAM', 'unit': 'P_HTHAB' }
+    df = client.get_dataset('crim_hom_vrel', params).to_dataframe()
     df.dropna(inplace = True)
     df['time'] = pd.to_datetime(df['time'])
 
     return df
-
 
 ##############################################################################
 
@@ -383,6 +384,16 @@ def get_heart_deaths(country):
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
     
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_suicide_rate(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T'}
+    df = client.get_dataset('tps00122', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)

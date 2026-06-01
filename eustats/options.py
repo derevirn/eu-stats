@@ -146,6 +146,24 @@ option_national = {
 
     },
 
+    'Intentional Homicides (Rate per 100K Inhabitants)': {
+        'df_func': get_homicide_rate,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },   
+
+    'Women Killed by Intimate Partner or Family (Rate per 100K Inhabitants)': {
+        'df_func': get_femicide_rate,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },   
+
      'Asylum Applicants (Absolute Number)': {
         'df_func': get_asylum_applicants,
         'category': 'Society',
@@ -164,23 +182,6 @@ option_national = {
 
     },
 
-    'National Deaths due to Homicide (Rate per 100K Inhabitants)': {
-        'df_func': get_homicide_rate,
-        'category': 'Society',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },   
-
-    'National Deaths due to Suicide (Rate per 100K Inhabitants)': {
-        'df_func': get_suicide_rate,
-        'category': 'Society',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },   
 
     #Health
 
@@ -246,6 +247,15 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
+
+    'National Deaths due to Suicide (Rate per 100K Inhabitants)': {
+        'df_func': get_suicide_rate,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },   
 
     'National Availability of Doctors': {
         'df_func': get_doctors,
