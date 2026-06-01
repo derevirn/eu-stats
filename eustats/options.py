@@ -119,8 +119,8 @@ option_national = {
 
     },
 
-    'National Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
-        'df_func': get_poverty_risk,
+    'National Tertiary Educational Attainment at Ages 25-64 (Population %)': {
+        'df_func': get_tertiary_attainment,
         'category': 'Society',
         'plot_type': 'line',
         'columns': 'values',
@@ -128,10 +128,37 @@ option_national = {
 
     },
 
-    'Asylum Applicants (Absolute Number)': {
+    'Get Early Leavers from Education and Training at Ages 18-24 (Population %)': {
+        'df_func': get_early_leavers,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Get Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
+        'df_func': get_employment_graduates,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+     'Asylum Applicants (Absolute Number)': {
         'df_func': get_asylum_applicants,
         'category': 'Society',
         'plot_type': 'bar',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+        'National Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
+        'df_func': get_poverty_risk,
+        'category': 'Society',
+        'plot_type': 'line',
         'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
@@ -193,37 +220,6 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },  
-
-
-    #Education
-
-    'National Tertiary Educational Attainment at Ages 25-64 (Population %)': {
-        'df_func': get_tertiary_attainment,
-        'category': 'Education',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
-    'Get Early Leavers from Education and Training at Ages 18-24 (Population %)': {
-        'df_func': get_early_leavers,
-        'category': 'Education',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
-    'Get Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
-        'df_func': get_employment_graduates,
-        'category': 'Education',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
 
     #Environment
 
@@ -366,7 +362,6 @@ option_regional = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
     },
 
-
     'Regional Population (Absolute Number)': {
         'df_func': get_population_region,
         'category': 'Society',
@@ -375,6 +370,15 @@ option_regional = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
+
+    'Regional Tertiary Educational Attainment at Ages 25-64 (Population %)': {
+        'df_func': get_tertiary_attainment_region,
+        'category': 'Society',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },    
 
     'Regional Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
         'df_func': get_poverty_risk_region,
@@ -421,15 +425,4 @@ option_regional = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
-
-
-    'Regional Tertiary Educational Attainment at Ages 25-64 (Population %)': {
-        'df_func': get_tertiary_attainment_region,
-        'category': 'Education',
-        'plot_type': 'choropleth',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },    
-
 }
