@@ -119,33 +119,6 @@ option_national = {
 
     },
 
-    'National Tertiary Educational Attainment at Ages 25-64 (Population %)': {
-        'df_func': get_tertiary_attainment,
-        'category': 'Society',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
-    'Early Leavers from Education and Training at Ages 18-24 (Population %)': {
-        'df_func': get_early_leavers,
-        'category': 'Society',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
-    'Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
-        'df_func': get_employment_graduates,
-        'category': 'Society',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    },
-
     'Intentional Homicides (Rate per 100K Inhabitants)': {
         'df_func': get_homicide_rate,
         'category': 'Society',
@@ -173,7 +146,7 @@ option_national = {
 
     },
 
-    'National Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
+    'People at Risk of Poverty or Social Exclusion (Population %)': {
         'df_func': get_poverty_risk,
         'category': 'Society',
         'plot_type': 'line',
@@ -182,6 +155,32 @@ option_national = {
 
     },
 
+    'National Tertiary Educational Attainment at Ages 25-64 (Population %)': {
+        'df_func': get_tertiary_attainment,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Early Leavers from Education and Training at Ages 18-24 (Population %)': {
+        'df_func': get_early_leavers,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
+        'df_func': get_employment_graduates,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
 
     #Health
 
@@ -435,7 +434,7 @@ option_regional = {
 
     },    
 
-    'Regional Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
+    'People at Risk of Poverty or Social Exclusion (Population %)': {
         'df_func': get_poverty_risk_region,
         'category': 'Society',
         'plot_type': 'choropleth',
