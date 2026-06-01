@@ -128,7 +128,7 @@ option_national = {
 
     },
 
-    'Get Early Leavers from Education and Training at Ages 18-24 (Population %)': {
+    'Early Leavers from Education and Training at Ages 18-24 (Population %)': {
         'df_func': get_early_leavers,
         'category': 'Society',
         'plot_type': 'line',
@@ -137,7 +137,7 @@ option_national = {
 
     },
 
-    'Get Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
+    'Employment Rates of Recent Graduates at Ages 20-34 (Population %)': {
         'df_func': get_employment_graduates,
         'category': 'Society',
         'plot_type': 'line',
@@ -155,7 +155,7 @@ option_national = {
 
     },
 
-        'National Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
+    'National Percentage of People at Risk of Poverty or Social Exclusion (Population %)': {
         'df_func': get_poverty_risk,
         'category': 'Society',
         'plot_type': 'line',
@@ -163,6 +163,24 @@ option_national = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
+
+    'National Deaths due to Homicide (Rate per 100K Inhabitants)': {
+        'df_func': get_homicide_rate,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },   
+
+    'National Deaths due to Suicide (Rate per 100K Inhabitants)': {
+        'df_func': get_suicide_rate,
+        'category': 'Society',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },   
 
     #Health
 
@@ -184,8 +202,24 @@ option_national = {
 
     },        
 
+    'Share of People with Good Health (Percentage of Population %)': {
+        'df_func': get_population_healthy,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
+    },        
 
+    'Unmet Need for Medical Examination/Care (Percentage of Population %)': {
+        'df_func': get_unmet_need_health,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    }, 
+                
     'Healthcare Expenditure (Percentage of GDP %)': {
         'df_func': get_healthcare_expenditure,
         'category': 'Health',
@@ -195,7 +229,7 @@ option_national = {
 
     },
 
-    # 'Regional Ischemic Heart Disease Deaths (per 100K Inhabitants)': {
+    # 'Regional Ischemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
     #     'df_func': get_heart_deaths,
     #     'category': 'Health',
     #     'plot_type': 'choropleth',
@@ -204,7 +238,7 @@ option_national = {
 
     # },
 
-    'National Cancer Deaths (per 100K inhabitants)': {
+    'National Cancer Deaths (Rate per 100K inhabitants)': {
         'df_func': get_cancer_deaths,
         'category': 'Health',
         'plot_type': 'line',
@@ -223,7 +257,7 @@ option_national = {
     },  
 
 
-    'National Availability of Hospital Beds (per 100K Inhabitants)': {
+    'National Availability of Hospital Beds (Rate per 100K Inhabitants)': {
         'df_func': get_hospital_beds,
         'category': 'Health',
         'plot_type': 'line',
@@ -400,7 +434,7 @@ option_regional = {
 
     },
 
-    'Regional Cancer Deaths (per 100K inhabitants)': {
+    'Regional Cancer Deaths (Rate per 100K inhabitants)': {
         'df_func': get_cancer_deaths_region,
         'category': 'Health',
         'plot_type': 'choropleth',
@@ -419,7 +453,7 @@ option_regional = {
     },  
 
 
-    'Regional Availability of Hospital Beds (per 100K Inhabitants)': {
+    'Regional Availability of Hospital Beds (Rate per 100K Inhabitants)': {
         'df_func': get_hospital_beds_region,
         'category': 'Health',
         'plot_type': 'choropleth',

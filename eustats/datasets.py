@@ -245,6 +245,27 @@ def get_gender_pay_gap(country):
 
     return df
 
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_homicide_rate(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T'}
+    df = client.get_dataset('tps00146', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_suicide_rate(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T'}
+    df = client.get_dataset('tps00122', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+
 ##############################################################################
 
 #Health
@@ -269,6 +290,25 @@ def get_healthy_years(country):
 
     return df
 
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_population_healthy(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T' }
+    df = client.get_dataset('sdg_03_20', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_unmet_need_health(country):
+    country = countries[country]
+    params = {'geo': country, 'sex': 'T' }
+    df = client.get_dataset('sdg_03_60', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
 
 
 @st.cache_data(ttl = SEC_IN_DAY)
