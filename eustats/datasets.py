@@ -24,7 +24,7 @@ def get_gdp(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_region(country):
     country = countries[country]
-    params = {'unit': 'MIO_EUR', 'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'unit': 'MIO_EUR', 'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -66,7 +66,7 @@ def get_gdp_growth(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_capita_region(country):
     country = countries[country]
-    params = {'unit': 'EUR_HAB', 'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'unit': 'EUR_HAB', 'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -77,7 +77,7 @@ def get_gdp_capita_region(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_gdp_capita_pps_region(country):
     country = countries[country]
-    params = {'unit': 'PPS_HAB_EU27_2020', 'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'unit': 'PPS_HAB_EU27_2020', 'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('nama_10r_2gdp', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -122,7 +122,7 @@ def get_unemployment(country):
 def get_unemployment_region(country):
     country = countries[country]
     params = {'sex': 'T', 'geo': codes[country], 'age': 'Y15-74',
-          'isced11': 'TOTAL', 'lastTimePeriod': 1}
+          'isced11': 'TOTAL', 'lastTimePeriod': 2}
     df = client.get_dataset('lfst_r_lfu3rt', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -195,7 +195,7 @@ def get_population_change(country):
 def get_population_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'sex': 'T',
-              'age': 'TOTAL', 'lastTimePeriod': 1}
+              'age': 'TOTAL', 'lastTimePeriod': 2}
     df = client.get_dataset('demo_r_d2jan', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -206,7 +206,7 @@ def get_population_region(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_population_density_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('tgs00024', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -237,7 +237,7 @@ def get_asylum_applicants(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_poverty_risk_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('ilc_peps11n', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -326,7 +326,7 @@ def get_unmet_need_health(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_life_expectancy_region(country):
     country = countries[country]
-    params = {'sex': 'T', 'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'sex': 'T', 'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('tgs00101', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x]) 
@@ -347,7 +347,7 @@ def get_doctors(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_doctors_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'unit': 'NR', 'lastTimePeriod': 1}
+    params = {'geo': codes[country], 'unit': 'NR', 'lastTimePeriod': 2}
     df = client.get_dataset('hlth_rs_physreg', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -380,7 +380,7 @@ def get_hospital_beds(country):
 def get_hospital_beds_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'unit': 'P_HTHAB',
-             'lastTimePeriod': 1}
+             'lastTimePeriod': 2}
     df = client.get_dataset('hlth_rs_bdsrg2', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x]) 
@@ -401,7 +401,7 @@ def get_heart_deaths(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_heart_deaths_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('tgs00059', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -431,7 +431,7 @@ def get_cancer_deaths(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_cancer_deaths_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'lastTimePeriod': 1}
+    params = {'geo': codes[country], 'lastTimePeriod': 2}
     df = client.get_dataset('tgs00058', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
@@ -459,7 +459,7 @@ def get_tertiary_attainment(country):
 def get_tertiary_attainment_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'sex': 'T', 'unit': 'PC',
-              'age': 'Y25-64', 'isced11': 'ED5-8', 'lastTimePeriod': 1}
+              'age': 'Y25-64', 'isced11': 'ED5-8', 'lastTimePeriod': 2}
     df = client.get_dataset('edat_lfse_04', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])

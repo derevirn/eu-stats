@@ -238,7 +238,7 @@ option_national = {
 
     },
 
-    'National Ischemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
+    'National Ischaemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
         'df_func': get_heart_deaths,
         'category': 'Health',
         'plot_type': 'line',
@@ -430,7 +430,7 @@ option_regional = {
 
     },
 
-    'Regional Ischemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
+    'Regional Ischaemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
         'df_func': get_heart_deaths_region,
         'category': 'Health',
         'plot_type': 'choropleth',
