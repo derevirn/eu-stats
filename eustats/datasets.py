@@ -204,6 +204,17 @@ def get_population_region(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_population_density_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'lastTimePeriod': 1}
+    df = client.get_dataset('tgs00024', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_poverty_risk(country):
     country = countries[country]
     params = {'geo': country, 'age': 'TOTAL', 'unit': 'PC'}

@@ -394,6 +394,15 @@ option_regional = {
 
     },
 
+    'Regional Population Density (People per Square Kilometre)': {
+        'df_func': get_population_density_region,
+        'category': 'Society',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
     'Regional Tertiary Educational Attainment at Ages 25-64 (Population %)': {
         'df_func': get_tertiary_attainment_region,
         'category': 'Society',
