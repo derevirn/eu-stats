@@ -95,8 +95,8 @@ def lin_reg_plot(df, x, y, model):
     fig = px.scatter(df, x = x, y = y, trendline = model,
                     height = 500, trendline_options = trendline_options,
                     hover_data= ['region_name'], 
-                    color='EU Region',
-                    #trendline_color_override = px.colors.qualitative.D3[3],
+                    #color='EU Region',
+                    trendline_color_override = px.colors.qualitative.D3[3],
                     color_discrete_sequence=px.colors.qualitative.D3)
 
     fig.update_layout(plot_bgcolor = 'white',
