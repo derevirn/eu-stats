@@ -277,8 +277,17 @@ option_national = {
 
     #Environment
 
-    'Greenhouse Gas Emissions (CO2 Equivalent in Tonnes per Capita)': {
+    'Greenhouse Gas Emissions (Million tonnes of CO2 equivalent)': {
         'df_func': get_ghg_emissions,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Greenhouse Gas Emissions (CO2 Equivalent in Tonnes per Capita)': {
+        'df_func': get_ghg_emissions_capita,
         'category': 'Environment',
         'plot_type': 'line',
         'columns': 'values',
