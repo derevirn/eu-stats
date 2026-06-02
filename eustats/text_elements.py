@@ -4,10 +4,8 @@ based on data from official sources. You can easily view the graph of your prefe
 by selecting a country and indicator below. Furthermore, you can visit the
 <a href ="/Analysis" target = "_self">Analysis</a> page for advanced statistics,
 including linear regression modeling and dimensionality reduction (PCA, t-SNE and UMAP).
-The dashboard was developed by [Giannis Tolios](https://giannis.io),
-using Python and various open source libraries, with the code being freely available
-at [Github](https://github.com/derevirn/eu-stats).
-If you have any feedback and suggestions, feel free to [send an email](mailto:info@statseuropa.com).  
+The dashboard was developed by [Giannis Tolios](https://giannis.io), with the code being available
+at [Github](https://github.com/derevirn/eu-stats). If you have any feedback, feel free to [send an email](mailto:info@statseuropa.com).  
 
 -----
 """
@@ -64,7 +62,7 @@ footer {visibility: hidden;}
   <p>Giannis Tolios 2026</p>
 </div>
 
-<style>[data-testid="stSidebar"] p {font-size: 18px !important;}</style>
+<style>[data-testid="stSidebar"] p {font-size: 17px !important;}</style>
 """
 
 tracking = '''<!-- Default Statcounter code for StatsEuropa https://eu-stats.herokuapp.com/ -->

@@ -331,55 +331,6 @@ option_national = {
 
     },
 
-
-    #COVID-19
-
-    'Daily Confirmed Cases of COVID-19': {
-        'df_func': get_new_cases,
-        'category': 'COVID-19',
-        'plot_type': 'bar',
-        'columns': 'values',
-        'source': '<a href="https://ourworldindata.org/">Our World in Data</a>'
-
-    },
-
-    'Daily Deaths from COVID-19': {
-        'df_func': get_new_deaths,
-        'category': 'COVID-19',
-        'plot_type': 'bar',
-        'columns': 'values',
-        'source': '<a href="https://ourworldindata.org/">Our World in Data</a>'
-
-    },
-
-    'Total Confirmed Cases of COVID-19': {
-        'df_func': get_total_cases,
-        'category': 'COVID-19',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ourworldindata.org/">Our World in Data</a>'
-
-    },
-
-    'Total Confirmed Deaths from COVID-19': {
-        'df_func': get_total_deaths,
-        'category': 'COVID-19',
-        'plot_type': 'line',
-        'columns': 'values',
-        'source': '<a href="https://ourworldindata.org/">Our World in Data</a>'
-
-    },
-
-    'Vaccinations for COVID-19': {
-        'df_func': get_vaccinations,
-        'category': 'COVID-19',
-        'plot_type': 'line',
-        'columns': ['At Least One Dose', 'Fully Vaccinated',
-        'Total Vaccinations', 'Booster Dose'],
-        'source': '<a href="https://ourworldindata.org/">Our World in Data</a>'
-
-    } 
-
 }
 
 option_regional = {

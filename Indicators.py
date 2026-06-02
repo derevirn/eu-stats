@@ -25,7 +25,7 @@ else:
         st.warning("⚠️ Please select at least one country.")
         st.stop() 
 
-cat_list = ['Economy', 'Society', 'Health', 'Environment', 'COVID-19']
+cat_list = ['Economy', 'Society', 'Health', 'Environment']
 category = col2.selectbox('Select a Category', cat_list)
 indicator = st.selectbox('Select a Statistical Indicator',
             get_keys(option_regional if geo_level else option_national, category))
