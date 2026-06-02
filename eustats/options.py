@@ -304,11 +304,11 @@ option_national = {
 
     },
 
-    'Energy Consumption (Kilograms of Oil Equivalent per Capita)': {
+    'Total Energy Consumption (Tonnes of Oil Equivalent per Capita)': {
         'df_func': get_energy_cons,
         'category': 'Environment',
         'plot_type': 'line',
-        'columns': ['Industry Sector', 'Transport Sector', 'Households'],
+        'columns': 'values',
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },

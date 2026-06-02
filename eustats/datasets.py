@@ -506,19 +506,10 @@ def get_renewable_pct(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_energy_cons(country):
     country = countries[country]
-    params = {'geo': country, 'unit': 'KGOE_HAB',
-              'nrg_bal': ['FC_OTH_HH_E', 'FC_IND_E', 'FC_TRA_E'] }
-    df = client.get_dataset('nrg_ind_esc', params).to_dataframe()
+    params = {'geo': country, 'unit': 'TOE_HAB'}
+    df = client.get_dataset('sdg_07_10', params).to_dataframe()
     df.dropna(inplace = True)
-
     df['time'] = pd.to_datetime(df['time'])
-    df = df.pivot(index = 'time', columns = 'nrg_bal', values = 'values').reset_index()
-    
-    columns = {'FC_OTH_HH_E': 'Households',
-               'FC_IND_E': 'Industry Sector',
-               'FC_TRA_E': 'Transport Sector'}
-    df.rename(columns = columns, inplace = True)
-
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
