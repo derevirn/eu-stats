@@ -521,6 +521,19 @@ def get_energy_imports(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_electricity_prices(country):
+    country = countries[country]
+    params = {'geo': country, 'currency': 'EUR', 
+              'nrg_cons': 'KWH2500-4999', 'tax': 'I_TAX', }
+    df = client.get_dataset('nrg_pc_204', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = df['time'].str.replace('S1','-01-01')
+    df['time'] = df['time'].str.replace('S2','-07-01')
+    df['time'] = pd.to_datetime(df['time'])
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_recycling_rate(country):
     country = countries[country]
     params = {'geo': country}

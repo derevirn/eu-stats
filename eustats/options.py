@@ -313,6 +313,15 @@ option_national = {
 
     },
 
+    'Electricity Prices for Household Consumers (Euros per kWh)': {
+        'df_func': get_electricity_prices,
+        'category': 'Environment',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
     'Recycling Rate of Municipal Waste (Percentage of Total Waste %)': {
         'df_func': get_recycling_rate,
         'category': 'Environment',
