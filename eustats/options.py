@@ -229,17 +229,17 @@ option_national = {
 
     },
 
-    # 'Regional Ischemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
-    #     'df_func': get_heart_deaths,
-    #     'category': 'Health',
-    #     'plot_type': 'choropleth',
-    #     'columns': 'values',
-    #     'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
-
-    # },
-
     'National Cancer Deaths (Rate per 100K inhabitants)': {
         'df_func': get_cancer_deaths,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'National Ischemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
+        'df_func': get_heart_deaths,
         'category': 'Health',
         'plot_type': 'line',
         'columns': 'values',
@@ -423,6 +423,15 @@ option_regional = {
 
     'Regional Cancer Deaths (Rate per 100K inhabitants)': {
         'df_func': get_cancer_deaths_region,
+        'category': 'Health',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Regional Ischemic Heart Disease Deaths (Rate per 100K Inhabitants)': {
+        'df_func': get_heart_deaths_region,
         'category': 'Health',
         'plot_type': 'choropleth',
         'columns': 'values',
