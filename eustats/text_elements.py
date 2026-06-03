@@ -13,7 +13,7 @@ at [Github](https://github.com/derevirn/eu-stats). If you have any feedback, fee
 desc_analysis = """ 
 This page provides statistical analysis for administrative regions of
 EU countries ([NUTS 2](https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics) level).
-The **Descriptive Statistics** tab contains the dataset (based on year 2022), as well as summary statistics and visualizations. 
+The **Descriptive Statistics** tab contains the dataset (based on year 2023), as well as summary statistics and visualizations. 
 Furthermore, the **Regression Modeling** tab lets you create a linear regression or LOWESS model,
 by choosing two variables of your preference.
 Finally, the **Dimensionality Reduction** tab provides visualizations of various dimensionality

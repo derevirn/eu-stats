@@ -58,7 +58,11 @@ with tab1:
                 st.plotly_chart(fig1, use_container_width = True)
 
     with st.expander("Correlation Heatmap for NUTS 2 Region Data"):
-        fig = correlation_heatmap(df)
+        cols = ['region_name', 'Country', 'EU Region', 'GDP per Capita (PPS)',
+                'Unemployment %', 'Employment in Hi-tech Sectors %', 'Life Expectancy', 'Doctors per 100K',
+                'Heart Disease Deaths per 100K', 'Fatal Road Accidents per Million','Tertiary Educational Attainment %',
+                 'Population Density', 'People at Risk of Poverty %', 'Regular Internet Users %', 'Land Covered by Buildings and Roads %']
+        fig = correlation_heatmap(df[cols])
         st.pyplot(fig)
 
 with tab2:
