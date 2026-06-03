@@ -17,7 +17,7 @@ geo_level = colB.toggle("Toggle National/Regional Indicators", help = level_help
 
 col1, col2 = st.columns(2)
 if geo_level:
-    country = col1.selectbox("Select a Country", countries.keys(), index = 11)
+    country = col1.selectbox("Select a Country", countries.keys(), index = 10)
 else:    
     country = col1.multiselect("Select one or more Countries", countries.keys(),
                                 max_selections = 5, default = ['Germany', 'France'])   

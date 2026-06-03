@@ -247,6 +247,15 @@ option_national = {
 
     },
 
+    'National Deaths due to PM2.5 Air Pollution (Rate per 100K inhabitants)': {
+        'df_func': get_pollution_deaths,
+        'category': 'Health',
+        'plot_type': 'line',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
     'National Deaths due to Suicide (Rate per 100K Inhabitants)': {
         'df_func': get_suicide_rate,
         'category': 'Health',

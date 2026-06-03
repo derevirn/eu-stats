@@ -399,6 +399,16 @@ def get_heart_deaths(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_pollution_deaths(country):
+    country = countries[country]
+    params = {'geo': country, 'unit': 'RT'}
+    df = client.get_dataset('sdg_11_52', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['time'] = pd.to_datetime(df['time'])
+    
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_heart_deaths_region(country):
     country = countries[country]
     params = {'geo': codes[country], 'lastTimePeriod': 2}
