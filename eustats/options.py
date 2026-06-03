@@ -475,4 +475,32 @@ option_regional = {
         'source': '<a href="https://edgar.jrc.ec.europa.eu/">EDGAR</a>'
 
     },
+
+    'Land Covered by Buildings and Roads (Percentage %)': {
+        'df_func': get_lulc_artificial_region,
+        'category': 'Environment',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Land Covered by Crops (Percentage %)': {
+        'df_func': get_lulc_cropland_region,
+        'category': 'Environment',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source':'<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
+    'Land Covered by Forests (Percentage %)': {
+        'df_func': get_lulc_woodland_region,
+        'category': 'Environment',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source':'<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
+
+    },
+
 }

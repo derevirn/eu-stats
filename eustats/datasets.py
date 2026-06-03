@@ -590,6 +590,38 @@ def get_plastic_waste(country):
 
     return df
 
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_lulc_artificial_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'lastTimePeriod': 2,
+              'landcover': 'A00', 'unit': 'pc'}
+    df = client.get_dataset('lan_lcv_ovw', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_lulc_cropland_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'lastTimePeriod': 2,
+              'landcover': 'B00', 'unit': 'pc'}
+    df = client.get_dataset('lan_lcv_ovw', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
+def get_lulc_woodland_region(country):
+    country = countries[country]
+    params = {'geo': codes[country], 'lastTimePeriod': 2,
+              'landcover': 'C00', 'unit': 'pc'}
+    df = client.get_dataset('lan_lcv_ovw', params).to_dataframe()
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    
+    return df
 
 
 ###############################################################################
