@@ -347,7 +347,7 @@ def get_doctors(country):
 @st.cache_data(ttl = SEC_IN_DAY)
 def get_doctors_region(country):
     country = countries[country]
-    params = {'geo': codes[country], 'unit': 'NR', 'lastTimePeriod': 2}
+    params = {'geo': codes[country], 'unit': 'P_HTHAB', 'lastTimePeriod': 2}
     df = client.get_dataset('hlth_rs_physreg', params).to_dataframe()
     df.dropna(inplace = True)
     df['region_name'] = df['geo'].apply(lambda x: codes[country][x])

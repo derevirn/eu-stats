@@ -448,7 +448,7 @@ option_regional = {
 
     },
 
-    'Regional Availability of Doctors': {
+    'Regional Availability of Doctors (Rate per 100K Inhabitants)': {
         'df_func': get_doctors_region,
         'category': 'Health',
         'plot_type': 'choropleth',
