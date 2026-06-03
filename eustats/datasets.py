@@ -516,6 +516,19 @@ def get_ghg_emissions_capita(country):
     return df
 
 @st.cache_data(ttl = SEC_IN_DAY)
+def get_ghg_emissions_region(country):
+    country = countries[country]
+    df = pd.read_csv("data/EDGAR_GHG_2025.csv")
+    df = df[df['geo'].isin(list(codes[country].keys()))]
+    df.dropna(inplace = True)
+    df['region_name'] = df['geo'].apply(lambda x: codes[country][x])
+    df.rename(columns={'Y_2024': 'values'}, inplace=True)
+    cols = ['values', 'geo', 'region_name']
+    df = df[cols]
+
+    return df
+
+@st.cache_data(ttl = SEC_IN_DAY)
 def get_renewable_pct(country):
     country = countries[country]
     params = {'geo': country, 'nrg_bal': 'REN'}

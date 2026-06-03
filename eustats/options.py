@@ -466,4 +466,13 @@ option_regional = {
         'source': '<a href="https://ec.europa.eu/eurostat">Eurostat</a>'
 
     },
+
+    'Regional Greenhouse Gas Emissions (Kilotonnes of CO2 equivalent)': {
+        'df_func': get_ghg_emissions_region,
+        'category': 'Environment',
+        'plot_type': 'choropleth',
+        'columns': 'values',
+        'source': '<a href="https://edgar.jrc.ec.europa.eu/">EDGAR</a>'
+
+    },
 }
