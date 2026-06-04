@@ -106,15 +106,15 @@ def lin_reg_plot(df, x, y, model):
 
     return fig
 
-def dimensionality_plot(df):
+def dimensionality_plot(df, color):
 
     df['pc_1'] = df['pc_1'] 
     df['pc_2'] = df['pc_2'] 
-    fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
+    fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color=color,
                     color_discrete_sequence=px.colors.qualitative.D3,
                     title = '',
                     height = 480, size = 'GDP per Capita', size_max = 17,
-                    custom_data = ['region_name', 'Country'])
+                    custom_data = [color, 'region_name', 'Country'])
 
     fig.update_layout(  margin=dict(l=1, r=1, t=15, b=1, pad=1),
                         plot_bgcolor = 'white',
