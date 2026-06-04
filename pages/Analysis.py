@@ -19,7 +19,7 @@ df = pd.read_csv('data/eu_regional_data.csv').sort_values('region_name')
 df_pca = pd.read_csv('data/eu_regional_data_pca.csv')
 df_tsne = pd.read_csv('data/eu_regional_data_tsne.csv')
 df_umap = pd.read_csv('data/eu_regional_data_umap.csv')
-num_cols = list(df.columns[3:])
+num_cols = list(df.columns[4:])
 
 tab_str = ['Descriptive Statistics', 'Regression Modeling',
            'Dimensionality Reduction Plots']
