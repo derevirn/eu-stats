@@ -8,7 +8,8 @@ from .nuts2 import *
 
 @st.cache_data
 def get_geojson():
-    nuts2_polygons = 'https://gist.githubusercontent.com/derevirn/6c433e9adacc839814cee57b6603f793/raw/40442fab2a394cfececd13db6dd9dd3ef174975a/nutsrg_2.json'
+    nuts2_polygons = 'https://gist.githubusercontent.com/derevirn/bb384d57e971384fc125b0f342461b64/raw/b06abd34816029ba95167f2e4407c620c0d9d2d8/nutsrg_2.json'
+    #nuts2_polygons = "https://raw.githubusercontent.com/eurostat/Nuts2json/refs/heads/master/pub/v2/2024/4326/20M/nutsrg_2.json"
     with urlopen(nuts2_polygons) as response:
         regions = json.load(response)
 
