@@ -57,7 +57,7 @@ footer {visibility: hidden;}
 </style>
 
 <div class="footer_">
-  <p>Giannis Tolios 2026</p>
+  <p>Version 3.0 &copy; Giannis Tolios 2026</p>
 </div>
 
 <style>[data-testid="stSidebar"] p {font-size: 17px !important;}</style>
