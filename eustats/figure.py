@@ -8,7 +8,8 @@ from .nuts2 import *
 
 @st.cache_data
 def get_geojson():
-    nuts2_polygons = 'https://gist.githubusercontent.com/derevirn/6c433e9adacc839814cee57b6603f793/raw/40442fab2a394cfececd13db6dd9dd3ef174975a/nutsrg_2.json'
+    nuts2_polygons = 'https://gist.githubusercontent.com/derevirn/bb384d57e971384fc125b0f342461b64/raw/b06abd34816029ba95167f2e4407c620c0d9d2d8/nutsrg_2.json'
+    #nuts2_polygons = "https://raw.githubusercontent.com/eurostat/Nuts2json/refs/heads/master/pub/v2/2024/4326/20M/nutsrg_2.json"
     with urlopen(nuts2_polygons) as response:
         regions = json.load(response)
 
@@ -17,7 +18,7 @@ def get_geojson():
 def create_line(df, columns):
 
     fig = px.line(data_frame = df, x = 'time',  y = columns,
-                  line_shape = 'linear',
+                  line_shape = 'linear', color = 'geo',
                   render_mode = 'svg',
                   color_discrete_sequence=px.colors.qualitative.D3)
 
@@ -29,13 +30,14 @@ def create_line(df, columns):
                       plot_bgcolor = 'white',
                       legend = dict(orientation = 'h', title = ''),
                       margin=dict(l=22, r=1, t=18, b=1, pad=1))
-    fig.update_yaxes(automargin = False)
+    fig.update_yaxes(automargin = False, showgrid=False)
 
     return fig
 
 def create_bar(df, columns):
 
     fig = px.bar(data_frame = df[-60:], x = 'time',  y = columns,
+                 color='geo', barmode = 'group',
                  color_discrete_sequence=px.colors.qualitative.D3)   
 
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
@@ -44,7 +46,7 @@ def create_bar(df, columns):
                       height = 400, 
                       plot_bgcolor = 'white',
                       margin=dict(l=26, r=1, t=18, b=1, pad=1))
-    fig.update_yaxes(automargin = False)
+    fig.update_yaxes(automargin = False, showgrid=False)
 
     return fig
 
@@ -55,7 +57,8 @@ def create_choropleth(df, columns):
                         locations = 'geo', color = columns,
                         featureidkey = 'properties.id',
                         color_continuous_scale="Viridis_r",
-                        projection = 'mercator',
+                        color_discrete_sequence= px.colors.qualitative.Vivid,
+                        projection = 'miller',
                         fitbounds = 'locations',
                         basemap_visible = False,
                         height = 500,
@@ -63,7 +66,7 @@ def create_choropleth(df, columns):
 
     hovertemplate = '%{customdata[0]}<br>%{customdata[1]:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
-    fig.update_layout(margin={"r":1,"t":15,"l":1,"b":10})
+    fig.update_layout(margin={"r":1,"t":2,"l":1,"b":2})
     fig.update_coloraxes(colorbar_title_text="")
 
     return fig
@@ -92,8 +95,9 @@ def lin_reg_plot(df, x, y, model):
         trendline_options=None
 
     fig = px.scatter(df, x = x, y = y, trendline = model,
-                    height = 400, trendline_options = trendline_options,
+                    height = 500, trendline_options = trendline_options,
                     hover_data= ['region_name'], 
+                    #color='EU Region',
                     trendline_color_override = px.colors.qualitative.D3[3],
                     color_discrete_sequence=px.colors.qualitative.D3)
 
@@ -104,15 +108,15 @@ def lin_reg_plot(df, x, y, model):
 
     return fig
 
-def dimensionality_plot(df):
+def dimensionality_plot(df, color):
 
     df['pc_1'] = df['pc_1'] 
     df['pc_2'] = df['pc_2'] 
-    fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color='EU Region',
+    fig = px.scatter(df, x = 'pc_1', y = 'pc_2', color=color,
                     color_discrete_sequence=px.colors.qualitative.D3,
                     title = '',
                     height = 480, size = 'GDP per Capita', size_max = 17,
-                    custom_data = ['region_name', 'Country'])
+                    custom_data = [color, 'region_name', 'Country'])
 
     fig.update_layout(  margin=dict(l=1, r=1, t=15, b=1, pad=1),
                         plot_bgcolor = 'white',

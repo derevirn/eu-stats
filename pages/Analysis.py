@@ -1,5 +1,5 @@
-import os, sys
-sys.path.insert(1, os.path.abspath('..'))
+# import os, sys
+# sys.path.insert(1, os.path.abspath('..'))
 from eustats import *
 import streamlit as st
 import pandas as pd
@@ -19,11 +19,12 @@ df = pd.read_csv('data/eu_regional_data.csv').sort_values('region_name')
 df_pca = pd.read_csv('data/eu_regional_data_pca.csv')
 df_tsne = pd.read_csv('data/eu_regional_data_tsne.csv')
 df_umap = pd.read_csv('data/eu_regional_data_umap.csv')
-num_cols = list(df.columns[3:])
+df_clustering = pd.read_csv('data/eu_regional_data_tsne_kmeans.csv')
+num_cols = list(df.columns[4:])
 
 tab_str = ['Descriptive Statistics', 'Regression Modeling',
-           'Dimensionality Reduction Plots']
-tab1, tab2, tab3 = st.tabs(tab_str)
+           'Dimensionality Reduction Plots', 'Clustering Plots']
+tab1, tab2, tab3, tab4 = st.tabs(tab_str)
 
 with tab1:
 
@@ -58,7 +59,11 @@ with tab1:
                 st.plotly_chart(fig1, use_container_width = True)
 
     with st.expander("Correlation Heatmap for NUTS 2 Region Data"):
-        fig = correlation_heatmap(df)
+        cols = ['region_name', 'Country', 'EU Region', 'GDP per Capita (PPS)',
+                'Unemployment %', 'Employment in Hi-tech Sectors %', 'Life Expectancy', 'Doctors per 100K',
+                'Heart Disease Deaths per 100K', 'Fatal Road Accidents per Million','Tertiary Educational Attainment %',
+                 'Population Density', 'People at Risk of Poverty %', 'Regular Internet Users %', 'Land Covered by Buildings and Roads %']
+        fig = correlation_heatmap(df[cols])
         st.pyplot(fig)
 
 with tab2:
@@ -90,18 +95,36 @@ with tab3:
     st.markdown('#### Dimensionality Reduction Plots for NUTS2 Region Data')
 
     dim_container = st.container()
-    dim_method = st.selectbox('Select Dimensionality Reduction Method: ', options = ['PCA', 't-SNE', 'UMAP'])
+    dim_method = st.selectbox('Select Dimensionality Reduction Method: ', options = ['t-SNE', 'PCA', 'UMAP'])
 
     with dim_container:
 
         if dim_method == 'PCA':
-            fig3 = dimensionality_plot(df_pca)
+            fig3 = dimensionality_plot(df_pca, 'EU Region')
         elif dim_method == 't-SNE':
-            fig3 = dimensionality_plot(df_tsne)
+            fig3 = dimensionality_plot(df_tsne, 'EU Region')
         elif dim_method == 'UMAP':
-            fig3 = dimensionality_plot(df_umap)
+            fig3 = dimensionality_plot(df_umap, 'EU Region')
 
         st.plotly_chart(fig3, use_container_width = True)
+
+with tab4:
+
+    st.markdown('#### K-Means Clustering Plots for NUTS2 Region Data')
+    clust_container = st.container()
+    clust_plot = st.selectbox('Select Plot: ', options = ['Map', 'Scatter Plot (t-SNE)'])
+
+    with clust_container:
+
+        if clust_plot == 'Map':
+            df_ = df_clustering.rename(columns = {'Cluster': 'values'})
+            fig4 = create_choropleth(df_, 'values')
+
+        if clust_plot == 'Scatter Plot (t-SNE)':
+            fig4 = dimensionality_plot(df_clustering, 'Cluster')    
+
+
+        st.plotly_chart(fig4, use_container_width = True)    
 
 st.markdown(terms)
 st.markdown(footer, unsafe_allow_html= True)

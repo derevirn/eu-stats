@@ -1,5 +1,5 @@
 from streamlit import session_state as session
-from .options import option_dict
+from .options import option_national, option_regional
 
 def get_keys(dict_, category):
     arr = []
