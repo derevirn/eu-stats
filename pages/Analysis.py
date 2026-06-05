@@ -95,7 +95,7 @@ with tab3:
     st.markdown('#### Dimensionality Reduction Plots for NUTS2 Region Data')
 
     dim_container = st.container()
-    dim_method = st.selectbox('Select Dimensionality Reduction Method: ', options = ['PCA', 't-SNE', 'UMAP'])
+    dim_method = st.selectbox('Select Dimensionality Reduction Method: ', options = ['t-SNE', 'PCA', 'UMAP'])
 
     with dim_container:
 

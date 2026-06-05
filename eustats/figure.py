@@ -57,7 +57,8 @@ def create_choropleth(df, columns):
                         locations = 'geo', color = columns,
                         featureidkey = 'properties.id',
                         color_continuous_scale="Viridis_r",
-                        projection = 'mercator',
+                        color_discrete_sequence= px.colors.qualitative.Vivid,
+                        projection = 'miller',
                         fitbounds = 'locations',
                         basemap_visible = False,
                         height = 500,
@@ -65,7 +66,7 @@ def create_choropleth(df, columns):
 
     hovertemplate = '%{customdata[0]}<br>%{customdata[1]:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
-    fig.update_layout(margin={"r":1,"t":15,"l":1,"b":10})
+    fig.update_layout(margin={"r":1,"t":2,"l":1,"b":2})
     fig.update_coloraxes(colorbar_title_text="")
 
     return fig

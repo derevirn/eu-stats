@@ -14,11 +14,9 @@ desc_analysis = """
 This page provides statistical analysis for administrative regions of
 EU countries ([NUTS 2](https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics) level).
 The **Descriptive Statistics** tab contains the dataset (based on year 2023), as well as summary statistics and visualizations. 
-Furthermore, the **Regression Modeling** tab lets you create a linear regression or LOWESS model,
-by choosing two variables of your preference.
-Finally, the **Dimensionality Reduction** tab provides visualizations of various dimensionality
-reduction methods applied on the dataset (PCA, t-SNE and UMAP), with the bubble size representing GDP per capita.
-You can click <a href ="/Indicators" target = "_self">Here</a> to go back to the Indicators page.
+The other tabs provide various statistical and machine learning methods applied on the dataset,
+such as regression modelling, dimensionality reduction (PCA, t-SNE, UMAP) and clustering (K-means model).
+You can click <a href ="/" target = "_self">Here</a> and go back to the Indicators page.
 
 -----
 """
