@@ -696,3 +696,35 @@ def get_vaccinations(country):
     #df_vaccinations.set_index('date', inplace = True)
 
     return df_vaccinations
+
+@st.cache_data
+def get_regional_data():
+    df = pd.read_csv('data/eu_regional_data.csv').sort_values('region_name')
+
+    return df
+
+@st.cache_data
+def get_pca_data():
+    df = pd.read_csv('data/eu_regional_data_pca.csv')
+
+    return df
+
+@st.cache_data
+def get_tsne_data():
+    df = pd.read_csv('data/eu_regional_data_tsne.csv')
+
+    return df
+
+@st.cache_data
+def get_umap_data():
+    df = pd.read_csv('data/eu_regional_data_umap.csv')
+
+    return df
+
+@st.cache_data
+def get_clustering_data():
+    df = pd.read_csv('data/eu_regional_data_tsne_kmeans.csv')
+
+    return df
+
+  

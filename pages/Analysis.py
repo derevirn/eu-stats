@@ -7,19 +7,16 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import plotly.express as px
 from statsmodels.stats.descriptivestats import describe
-
 plt.style.use('seaborn-v0_8-whitegrid')
 mpl.rcParams['figure.dpi'] = 300
-st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 
+st.set_page_config(page_title="StatsEuropa", page_icon="📈")
 st.title('StatsEuropa 📈')
 st.markdown(desc_analysis, unsafe_allow_html= True)
 
-df = pd.read_csv('data/eu_regional_data.csv').sort_values('region_name')
-df_pca = pd.read_csv('data/eu_regional_data_pca.csv')
-df_tsne = pd.read_csv('data/eu_regional_data_tsne.csv')
-df_umap = pd.read_csv('data/eu_regional_data_umap.csv')
-df_clustering = pd.read_csv('data/eu_regional_data_tsne_kmeans.csv')
+df = get_regional_data(); df_pca = get_pca_data()
+df_tsne = get_tsne_data(); df_umap = get_umap_data()
+df_clustering = get_clustering_data()
 num_cols = list(df.columns[4:])
 
 tab_str = ['Descriptive Statistics', 'Regression Modeling',
