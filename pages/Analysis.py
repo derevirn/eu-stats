@@ -22,7 +22,7 @@ num_cols = list(df.columns[4:])
 tab_str = ['Descriptive Statistics', 'Regression Modeling',
            'Dimensionality Reduction Plots', 'Clustering Plots']
 current_tab = st.segmented_control("", options=tab_str, label_visibility='collapsed',
-                                   default='Descriptive Statistics')
+                                  width='stretch', default='Descriptive Statistics')
 
 if current_tab == 'Descriptive Statistics':
 
