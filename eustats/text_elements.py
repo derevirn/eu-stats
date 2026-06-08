@@ -63,7 +63,7 @@ footer {visibility: hidden;}
 <style>[data-testid="stSidebar"] p {font-size: 17px !important;}</style>
 """
 
-tracking = ''' blah blah<!-- Default Statcounter code for StatsEuropa https://eu-stats.herokuapp.com/ -->
+tracking = '''<!-- Default Statcounter code for StatsEuropa https://eu-stats.herokuapp.com/ -->
 
 <script type="text/javascript">
 var sc_project=12751725; 
