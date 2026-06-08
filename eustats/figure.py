@@ -15,6 +15,7 @@ def get_geojson():
 
     return regions
     
+@st.cache_data(max_entries=5)    
 def create_line(df, columns):
 
     fig = px.line(data_frame = df, x = 'time',  y = columns,
@@ -50,7 +51,7 @@ def create_bar(df, columns):
 
     return fig
 
-@st.cache_resource(max_entries=5)
+@st.cache_data(max_entries=5)
 def create_choropleth(df, columns):
 
     fig = px.choropleth(df, geojson = get_geojson(),
@@ -71,7 +72,6 @@ def create_choropleth(df, columns):
 
     return fig
 
-@st.cache_resource(max_entries=5)
 def create_figure(df, dict_selection):
 
     plot_type = dict_selection['plot_type']
@@ -88,7 +88,7 @@ def create_figure(df, dict_selection):
 
     return fig
 
-@st.cache_resource(max_entries=5)
+@st.cache_data(max_entries=5)
 def lin_reg_plot(df, x, y, model):
 
     if model == 'lowess':
@@ -110,7 +110,7 @@ def lin_reg_plot(df, x, y, model):
 
     return fig
 
-@st.cache_resource(max_entries=5)
+@st.cache_data(max_entries=5)
 def dimensionality_plot(df, color):
 
     df['pc_1'] = df['pc_1'] 
@@ -133,7 +133,7 @@ def dimensionality_plot(df, color):
 
     return fig
 
-@st.cache_resource(max_entries=5)
+@st.cache_data(max_entries=5)
 def box_plot(df, variable):
 
     fig = px.box(df, x = 'EU Region', y = variable, points = 'all',
@@ -150,7 +150,7 @@ def box_plot(df, variable):
     
     return fig
 
-@st.cache_resource(max_entries=5)
+@st.cache_data(max_entries=5)
 def kde_plot(df, variable):
 
     fig, ax = plt.subplots(figsize = (10,6))
@@ -168,7 +168,7 @@ def kde_plot(df, variable):
 
     return fig
 
-@st.cache_resource(max_entries=5)
+@st.cache_data(max_entries=5)
 def correlation_heatmap(df):
 
     fig, ax = plt.subplots(figsize = (10,8))
