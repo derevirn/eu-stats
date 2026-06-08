@@ -21,9 +21,10 @@ num_cols = list(df.columns[4:])
 
 tab_str = ['Descriptive Statistics', 'Regression Modeling',
            'Dimensionality Reduction Plots', 'Clustering Plots']
-tab1, tab2, tab3, tab4 = st.tabs(tab_str)
+current_tab = st.segmented_control("", options=tab_str, label_visibility='collapsed',
+                                   default='Descriptive Statistics')
 
-with tab1:
+if current_tab == 'Descriptive Statistics':
 
     st.markdown('##### Descriptive Statistics for NUTS 2 Region Data')
 
@@ -63,7 +64,7 @@ with tab1:
         fig = correlation_heatmap(df[cols])
         st.pyplot(fig)
 
-with tab2:
+elif current_tab == 'Regression Modeling':
 
     st.markdown('##### Regression Modeling for NUTS 2 Region Data')
 
@@ -87,7 +88,7 @@ with tab2:
             summary = px.get_trendline_results(fig2).px_fit_results.iloc[0].summary()
             st.write(summary)
 
-with tab3:
+elif current_tab == 'Dimensionality Reduction Plots':
 
     st.markdown('#### Dimensionality Reduction Plots for NUTS2 Region Data')
 
@@ -105,7 +106,7 @@ with tab3:
 
         st.plotly_chart(fig3, use_container_width = True)
 
-with tab4:
+elif current_tab == 'Clustering Plots':
 
     st.markdown('#### K-Means Clustering Plots for NUTS2 Region Data')
     clust_container = st.container()
