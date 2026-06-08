@@ -65,4 +65,4 @@ with plot_container:
 
 st.markdown(terms)
 st.html(footer)
-st.html(tracking)
+st.html(tracking, unsafe_allow_javascript=True)
