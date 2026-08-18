@@ -25,7 +25,7 @@ def create_line(df, columns):
 
     hovertemplate = '%{x|%d/%m/%Y} <br>%{y:,.2f}'
     fig.update_traces(hovertemplate=hovertemplate)
-    fig.update_traces(line_width = 3)
+    fig.update_traces(line_width = 3.5)
     fig.update_layout(xaxis_title = '', yaxis_title = '',
                       height = 400,
                       plot_bgcolor = 'white',
